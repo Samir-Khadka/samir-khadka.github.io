@@ -1724,12 +1724,27 @@ section.tight {
   }
 
   /* Drawer button: show icon only */
-  .drawer-toggle-btn span {
+  .drawer-toggle-btn .drawer-label {
     display: none;
   }
 
   .drawer-toggle-btn {
     padding: 8px 12px;
+  }
+
+  /* Brand styling to prevent wrapping */
+  .brand {
+    font-size: 0.95rem;
+    gap: 8px;
+  }
+
+  .brand span {
+    white-space: nowrap;
+  }
+
+  .brand-avatar {
+    width: 28px;
+    height: 28px;
   }
 
   /* Hero */
