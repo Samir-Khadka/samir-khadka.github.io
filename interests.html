@@ -33,6 +33,9 @@
         <a href="contact.html">Contact</a>
       </nav>
       <div class="header-actions">
+        <button onclick="toggleTheme()" class="theme-toggle-btn" id="themeBtn" aria-label="Switch theme">
+          <span class="theme-icon">☀️</span><span class="theme-label">Light</span>
+        </button>
         <button onclick="toggleSidebar(true)" class="drawer-toggle-btn" aria-label="Open Skills Drawer">
           <i class="fas fa-layer-group"></i> Skills
         </button>
@@ -111,15 +114,17 @@
             <span class="mono" style="font-size: 0.8rem; color: var(--text-muted); display: block; margin-bottom: 12px; font-weight: 600;">03 / NUMEROLOGY</span>
             <h3 style="font-size: 2.2rem; margin-bottom: 16px;">Numerology</h3>
             <p class="lead">A long-running fascination with the patterns hidden in numbers — the same curiosity that pulls me toward algorithms and clean data systems.</p>
-            <p>Try the calculator: enter a date of birth to find a Life Path number and its traditional pattern interpretation.</p>
+            <p>Try the professional Vedic calculator: enter your date of birth to uncover your deep numerology profile based on your <strong>Mulank</strong> (Psychic Number) and <strong>Bhagyank</strong> (Destiny Number) including detailed life, career, and love predictions.</p>
           </div>
           <div style="width: 100%;">
             <div class="numerology-tool">
               <form id="numerology-form">
-                <label for="dob-input">Date of birth</label>
-                <input type="date" id="dob-input" required>
+                <div>
+                  <label for="dob-input">Date of birth</label>
+                  <input type="date" id="dob-input" required>
+                </div>
                 <div class="btn-row" style="margin-top:20px;">
-                  <button type="submit" class="btn solid" style="border:none; cursor:pointer;">Calculate Life Path <i class="fas fa-arrow-right"></i></button>
+                  <button type="submit" class="btn solid" style="border:none; cursor:pointer;">Generate Vedic Report <i class="fas fa-arrow-right"></i></button>
                 </div>
               </form>
               <div class="num-result" id="num-result"></div>
