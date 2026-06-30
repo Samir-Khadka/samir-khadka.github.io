@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Other Interests — Samir Khadka</title>
+  <meta name="description" content="Interests of Samir Khadka — competitive chess, graphic design, and pattern systems like numerology.">
+  <link rel="canonical" href="https://samir-khadka.com.np/interests.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Screen background fixed video container -->
+  <div class="bg-container">
+    <video id="bgVideo" class="bg-video" autoplay loop muted playsinline></video>
+  </div>
+  <div class="video-overlay"></div>
+
+  <!-- Header Navigation -->
+  <header class="site-head">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <img src="assets/profile.jpg" alt="Samir Khadka Profile Photo" class="brand-avatar">
+        Samir Khadka
+      </a>
+      <nav class="links">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="interests.html" class="active">Other Interests</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button onclick="toggleSidebar(true)" class="drawer-toggle-btn" aria-label="Open Skills Drawer">
+          <i class="fas fa-layer-group"></i> Skills
+        </button>
+        <button class="nav-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero reveal-up" style="padding-bottom: 40px;">
+    <div class="hero-inner">
+      <div class="eyebrow">Beyond the codebase</div>
+      <h1 class="heading-cinematic">Other Interests</h1>
+      <p class="lead" style="margin-top: 16px;">Three boards I play on: the chessboard, the design canvas, and the number grid.</p>
+    </div>
+  </section>
+
+  <!-- Interests Grid -->
+  <section class="reveal-up">
+    <div class="section-inner" style="display: flex; flex-direction: column; gap: 32px;">
+
+      <!-- Chess -->
+      <div class="glass-card">
+        <div class="grid-2" style="align-items: center; gap: 40px;">
+          <div>
+            <span class="mono" style="font-size: 0.8rem; color: var(--text-muted); display: block; margin-bottom: 12px; font-weight: 600;">01 / CHESS</span>
+            <h3 style="font-size: 2.2rem; margin-bottom: 16px;">Competitive Chess</h3>
+            <p class="lead">Represented at the U-16 World Youth Chess Olympiad — competing against junior players from around the world and learning to think in calculated, multi-move sequences under pressure.</p>
+          </div>
+          <div>
+            <p>That same discipline — read the position, weigh the options, commit to a line — carries straight into how I approach debugging, system architecture, and optimization.</p>
+            <div class="chess-stats">
+              <div class="chess-stat">
+                <strong>U-16</strong>
+                <span>World Youth Olympiad</span>
+              </div>
+              <div class="chess-stat">
+                <strong>Junior</strong>
+                <span>Competitive level</span>
+              </div>
+              <div class="chess-stat">
+                <strong>Strategy</strong>
+                <span>Calculated decisions</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Design -->
+      <div class="glass-card">
+        <div class="grid-2" style="align-items: center; gap: 40px;">
+          <div>
+            <span class="mono" style="font-size: 0.8rem; color: var(--text-muted); display: block; margin-bottom: 12px; font-weight: 600;">02 / DESIGN</span>
+            <h3 style="font-size: 2.2rem; margin-bottom: 16px;">Graphic Design</h3>
+            <p class="lead">Design and code feed each other. Working as a graphic designer sharpened an eye for layout, typography, and color theory that shows up directly in the interfaces I build.</p>
+          </div>
+          <div>
+            <p>I aim to construct pixel-perfect websites that combine premium layouts and responsive design. The design and structure of this portfolio is a direct reflection of these visual instincts.</p>
+            <div class="tag-row">
+              <span class="tag">Layout &amp; Typography</span>
+              <span class="tag">Branding</span>
+              <span class="tag">UI Composition</span>
+              <span class="tag">Color Systems</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Numerology -->
+      <div class="glass-card">
+        <div class="grid-2" style="align-items: flex-start; gap: 40px;">
+          <div>
+            <span class="mono" style="font-size: 0.8rem; color: var(--text-muted); display: block; margin-bottom: 12px; font-weight: 600;">03 / NUMEROLOGY</span>
+            <h3 style="font-size: 2.2rem; margin-bottom: 16px;">Numerology</h3>
+            <p class="lead">A long-running fascination with the patterns hidden in numbers — the same curiosity that pulls me toward algorithms and clean data systems.</p>
+            <p>Try the calculator: enter a date of birth to find a Life Path number and its traditional pattern interpretation.</p>
+          </div>
+          <div style="width: 100%;">
+            <div class="numerology-tool">
+              <form id="numerology-form">
+                <label for="dob-input">Date of birth</label>
+                <input type="date" id="dob-input" required>
+                <div class="btn-row" style="margin-top:20px;">
+                  <button type="submit" class="btn solid" style="border:none; cursor:pointer;">Calculate Life Path <i class="fas fa-arrow-right"></i></button>
+                </div>
+              </form>
+              <div class="num-result" id="num-result"></div>
+              <p class="num-disclaimer">For fun and reflection — numerology is a tradition of pattern and symbolism, not a scientific or predictive method.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-foot">
+    <div class="foot-inner">
+      <span>© 2026 Samir Khadka.</span>
+      <div style="display:flex;gap:20px;">
+        <a href="https://linkedin.com/in/khadka-samir" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/samir-khadka" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+        <a href="mailto:samirshirjan890@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating bottom interactive buttons -->
+  <button onclick="toggleInfoModal(true)" class="info-btn" aria-label="About Samir Khadka">
+    <i class="fas fa-info"></i>
+  </button>
+  
+  <button onclick="changeBackground()" class="change-bg-btn" aria-label="Change Background Video">
+    <i class="fas fa-random"></i> <span>Change BG</span>
+  </button>
+
+  <!-- Centered Popup Bio Modal -->
+  <div id="aboutModal" class="modal-overlay">
+    <div class="modal-box">
+      <button onclick="toggleInfoModal(false)" class="modal-close-btn" aria-label="Close modal">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="modal-profile-header">
+        <img src="assets/profile.jpg" alt="Samir Khadka Profile Photo" class="modal-profile-img">
+        <div class="modal-profile-title">
+          <h2>Samir Khadka</h2>
+          <p>Developer &amp; Designer</p>
+        </div>
+      </div>
+      <div class="modal-bio">
+        <p>Samir Khadka is a full stack software developer, graphic designer, and competitive chess player from Urlabari, Nepal.</p>
+        <p>Recent BSc CSIT graduate (2022 — 2026) who has represented Nepal at the U-16 World Youth Chess Olympiad. Passionate about building premium visual web interfaces and solid DevOps/Cloud deployment automation.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sidebar Drawer Overlay and Drawer -->
+  <div id="sidebarOverlay" class="sidebar-overlay"></div>
+  <div id="sidebarDrawer" class="sidebar-drawer">
+    <div class="sidebar-header">
+      <div class="sidebar-header-title">
+        <i class="fas fa-layer-group" style="font-size:1.3rem;"></i>
+        <div>
+          <h2>Skills Archive</h2>
+          <p style="margin: 0; font-size:0.65rem; opacity:0.7;">Filter &amp; Explore</p>
+        </div>
+      </div>
+      <button onclick="toggleSidebar(false)" class="sidebar-close-btn" aria-label="Close sidebar">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="sidebar-search-box">
+      <div class="sidebar-search-input-wrapper">
+        <i class="fas fa-search"></i>
+        <input type="text" id="sidebarSearch" placeholder="Search skills, category, level..." class="sidebar-search-input">
+      </div>
+    </div>
+    <div id="allSkillsList" class="sidebar-content">
+      <!-- Rendered dynamically via JavaScript -->
+    </div>
+    <div id="sidebarNoResults" class="sidebar-no-results">
+      <i class="fas fa-box-open"></i>
+      <h4>No skills found</h4>
+      <p style="font-size:0.8rem; opacity:0.7;">Try searching with different keywords.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

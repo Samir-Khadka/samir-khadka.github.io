@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Samir Khadka</title>
+  <meta name="description" content="Get in touch with Samir Khadka — full stack developer, DevOps enthusiast, and graphic designer based in Nepal.">
+  <link rel="canonical" href="https://samir-khadka.com.np/contact.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Screen background fixed video container -->
+  <div class="bg-container">
+    <video id="bgVideo" class="bg-video" autoplay loop muted playsinline></video>
+  </div>
+  <div class="video-overlay"></div>
+
+  <!-- Header Navigation -->
+  <header class="site-head">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <img src="assets/profile.jpg" alt="Samir Khadka Profile Photo" class="brand-avatar">
+        Samir Khadka
+      </a>
+      <nav class="links">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="interests.html">Other Interests</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button onclick="toggleSidebar(true)" class="drawer-toggle-btn" aria-label="Open Skills Drawer">
+          <i class="fas fa-layer-group"></i> Skills
+        </button>
+        <button class="nav-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero reveal-up" style="padding-bottom: 40px;">
+    <div class="hero-inner">
+      <div class="eyebrow">Let's talk</div>
+      <h1 class="heading-cinematic">Get in touch</h1>
+      <p class="lead" style="margin-top: 16px;">Open to full-stack roles, freelance design work, and anything interesting in between.</p>
+    </div>
+  </section>
+
+  <!-- Contact Information Grid -->
+  <section class="reveal-up">
+    <div class="section-inner">
+      <div class="glass-card">
+        <div class="contact-grid">
+          
+          <!-- Column 1: Core Channels -->
+          <div>
+            <div class="contact-row">
+              <span class="label">Email</span>
+              <a href="mailto:samirshirjan890@gmail.com"><i class="fas fa-envelope"></i> samirshirjan890@gmail.com</a>
+            </div>
+            <div class="contact-row">
+              <span class="label">Phone</span>
+              <a href="tel:+9779862853613"><i class="fas fa-phone"></i> +977 9862853613</a>
+            </div>
+            <div class="contact-row">
+              <span class="label">Location</span>
+              <span class="val mono"><i class="fas fa-map-marker-alt"></i> Urlabari, Nepal</span>
+            </div>
+          </div>
+          
+          <!-- Column 2: Web Profiles -->
+          <div>
+            <div class="contact-row">
+              <span class="label">GitHub</span>
+              <a href="https://github.com/samir-khadka" target="_blank" rel="noopener"><i class="fab fa-github"></i> github.com/samir-khadka</a>
+            </div>
+            <div class="contact-row">
+              <span class="label">LinkedIn</span>
+              <a href="https://linkedin.com/in/khadka-samir" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> linkedin.com/in/khadka-samir</a>
+            </div>
+            <div class="contact-row">
+              <span class="label">Website</span>
+              <a href="https://samir-khadka.com.np/" target="_blank" rel="noopener"><i class="fas fa-globe"></i> samir-khadka.com.np</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-foot">
+    <div class="foot-inner">
+      <span>© 2026 Samir Khadka.</span>
+      <div style="display:flex;gap:20px;">
+        <a href="https://linkedin.com/in/khadka-samir" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/samir-khadka" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+        <a href="mailto:samirshirjan890@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating bottom interactive buttons -->
+  <button onclick="toggleInfoModal(true)" class="info-btn" aria-label="About Samir Khadka">
+    <i class="fas fa-info"></i>
+  </button>
+  
+  <button onclick="changeBackground()" class="change-bg-btn" aria-label="Change Background Video">
+    <i class="fas fa-random"></i> <span>Change BG</span>
+  </button>
+
+  <!-- Centered Popup Bio Modal -->
+  <div id="aboutModal" class="modal-overlay">
+    <div class="modal-box">
+      <button onclick="toggleInfoModal(false)" class="modal-close-btn" aria-label="Close modal">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="modal-profile-header">
+        <img src="assets/profile.jpg" alt="Samir Khadka Profile Photo" class="modal-profile-img">
+        <div class="modal-profile-title">
+          <h2>Samir Khadka</h2>
+          <p>Developer &amp; Designer</p>
+        </div>
+      </div>
+      <div class="modal-bio">
+        <p>Samir Khadka is a full stack software developer, graphic designer, and competitive chess player from Urlabari, Nepal.</p>
+        <p>Recent BSc CSIT graduate (2022 — 2026) who has represented Nepal at the U-16 World Youth Chess Olympiad. Passionate about building premium visual web interfaces and solid DevOps/Cloud deployment automation.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sidebar Drawer Overlay and Drawer -->
+  <div id="sidebarOverlay" class="sidebar-overlay"></div>
+  <div id="sidebarDrawer" class="sidebar-drawer">
+    <div class="sidebar-header">
+      <div class="sidebar-header-title">
+        <i class="fas fa-layer-group" style="font-size:1.3rem;"></i>
+        <div>
+          <h2>Skills Archive</h2>
+          <p style="margin: 0; font-size:0.65rem; opacity:0.7;">Filter &amp; Explore</p>
+        </div>
+      </div>
+      <button onclick="toggleSidebar(false)" class="sidebar-close-btn" aria-label="Close sidebar">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="sidebar-search-box">
+      <div class="sidebar-search-input-wrapper">
+        <i class="fas fa-search"></i>
+        <input type="text" id="sidebarSearch" placeholder="Search skills, category, level..." class="sidebar-search-input">
+      </div>
+    </div>
+    <div id="allSkillsList" class="sidebar-content">
+      <!-- Rendered dynamically via JavaScript -->
+    </div>
+    <div id="sidebarNoResults" class="sidebar-no-results">
+      <i class="fas fa-box-open"></i>
+      <h4>No skills found</h4>
+      <p style="font-size:0.8rem; opacity:0.7;">Try searching with different keywords.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

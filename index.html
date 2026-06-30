@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samir Khadka — Full Stack Developer & Designer</title>
+  <meta name="description" content="Samir Khadka — full stack software developer, graphic designer, and chess player from Nepal. Recent CS graduate ready to build performant, premium web applications.">
+  <link rel="canonical" href="https://samir-khadka.com.np/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Screen background fixed video container -->
+  <div class="bg-container">
+    <video id="bgVideo" class="bg-video" autoplay loop muted playsinline></video>
+  </div>
+  <div class="video-overlay"></div>
+
+  <!-- Header Navigation -->
+  <header class="site-head">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <img src="assets/profile.jpg" alt="Samir Khadka Profile Photo" class="brand-avatar">
+        Samir Khadka
+      </a>
+      <nav class="links">
+        <a href="index.html" class="active">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="interests.html">Other Interests</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button onclick="toggleSidebar(true)" class="drawer-toggle-btn" aria-label="Open Skills Drawer">
+          <i class="fas fa-layer-group"></i> Skills
+        </button>
+        <button class="nav-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Hero Section -->
+  <section class="hero reveal-up">
+    <div class="hero-inner">
+      <div class="eyebrow">Urlabari, Nepal</div>
+      <h1>Building software <span class="heading-cinematic">and</span><br>designing the page around it.</h1>
+      <p class="lead">Full stack developer and graphic designer with a habit of thinking several moves ahead — on the board and in the codebase. Recent CS graduate, ready to bring fresh energy to a team that loves to build.</p>
+
+      <div class="hero-meta">
+        <div><strong>BSc CSIT</strong>2022 — 2026</div>
+        <div><strong>10+</strong>students mentored</div>
+        <div><strong>U-16</strong>World Youth Chess Olympiad</div>
+      </div>
+
+      <div class="btn-row">
+        <a href="projects.html" class="btn solid">View projects <i class="fas fa-arrow-right"></i></a>
+        <a href="contact.html" class="btn">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills & Tools -->
+  <section class="reveal-up">
+    <div class="section-inner">
+      <div class="section-head">
+        <h2>Skills &amp; tools</h2>
+        <span class="eyebrow">Stack</span>
+      </div>
+      <div class="skill-grid">
+        <div class="skill-cell">Python</div>
+        <div class="skill-cell">C++</div>
+        <div class="skill-cell">JavaScript</div>
+        <div class="skill-cell">React.js</div>
+        <div class="skill-cell">Node.js</div>
+        <div class="skill-cell">Express.js</div>
+        <div class="skill-cell">Tailwind CSS</div>
+        <div class="skill-cell">Vite</div>
+        <div class="skill-cell">WebSocket</div>
+        <div class="skill-cell">REST APIs</div>
+        <div class="skill-cell">Django</div>
+        <div class="skill-cell">Flask</div>
+        <div class="skill-cell">SQL</div>
+        <div class="skill-cell">Git</div>
+        <div class="skill-cell">Jenkins</div>
+        <div class="skill-cell">Docker</div>
+        <div class="skill-cell">Kubernetes</div>
+        <div class="skill-cell">Terraform</div>
+        <div class="skill-cell">AWS</div>
+        <div class="skill-cell">Linux</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Training & Achievements -->
+  <section class="reveal-up">
+    <div class="section-inner">
+      <div class="section-head">
+        <h2>Training &amp; achievements</h2>
+        <span class="eyebrow">Record</span>
+      </div>
+      <div class="glass-card">
+        <div class="timeline">
+          <div class="tl-item">
+            <span class="date">Aug 2025 — Present</span>
+            <h4>DevOps &amp; Cloud Training, AMCNSS</h4>
+            <p>Hands-on training in Linux, Git, Jenkins, Docker, Kubernetes, Terraform, AWS, and GitHub — covering system administration, CI/CD, containerization, infrastructure as code, and collaborative workflows.</p>
+          </div>
+          <div class="tl-item">
+            <span class="date">2024</span>
+            <h4>Best Project Award — Bachelor's Major Project</h4>
+            <p>Recognized for the Live Cricket Scoreboard application, outstanding in technical execution and real-world effort.</p>
+          </div>
+          <div class="tl-item">
+            <span class="date">2024</span>
+            <h4>Version Control with Git &amp; GitHub — LinkedIn Learning</h4>
+            <p>Professional certification covering modern collaborative version control workflows and repository management.</p>
+          </div>
+          <div class="tl-item">
+            <span class="date">Ongoing</span>
+            <h4>Academic Scholarship</h4>
+            <p>Awarded for academic merit, recognizing consistent study habits, performance, and programming dedication.</p>
+          </div>
+          <div class="tl-item">
+            <span class="date">Ongoing</span>
+            <h4>Mentorship &amp; Teaching</h4>
+            <p>Mentored 10+ junior students in programming, and volunteered as a coding instructor at a local school, teaching Python for two months.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-foot">
+    <div class="foot-inner">
+      <span>© 2026 Samir Khadka.</span>
+      <div style="display:flex;gap:20px;">
+        <a href="https://linkedin.com/in/khadka-samir" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/samir-khadka" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+        <a href="mailto:samirshirjan890@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating bottom interactive buttons -->
+  <button onclick="toggleInfoModal(true)" class="info-btn" aria-label="About Samir Khadka">
+    <i class="fas fa-info"></i>
+  </button>
+  
+  <button onclick="changeBackground()" class="change-bg-btn" aria-label="Change Background Video">
+    <i class="fas fa-random"></i> <span>Change BG</span>
+  </button>
+
+  <!-- Centered Popup Bio Modal -->
+  <div id="aboutModal" class="modal-overlay">
+    <div class="modal-box">
+      <button onclick="toggleInfoModal(false)" class="modal-close-btn" aria-label="Close modal">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="modal-profile-header">
+        <img src="assets/profile.jpg" alt="Samir Khadka Profile Photo" class="modal-profile-img">
+        <div class="modal-profile-title">
+          <h2>Samir Khadka</h2>
+          <p>Developer &amp; Designer</p>
+        </div>
+      </div>
+      <div class="modal-bio">
+        <p>Samir Khadka is a full stack software developer, graphic designer, and competitive chess player from Urlabari, Nepal.</p>
+        <p>Recent BSc CSIT graduate (2022 — 2026) who has represented Nepal at the U-16 World Youth Chess Olympiad. Passionate about building premium visual web interfaces and solid DevOps/Cloud deployment automation.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sidebar Drawer Overlay and Drawer -->
+  <div id="sidebarOverlay" class="sidebar-overlay"></div>
+  <div id="sidebarDrawer" class="sidebar-drawer">
+    <div class="sidebar-header">
+      <div class="sidebar-header-title">
+        <i class="fas fa-layer-group" style="font-size:1.3rem;"></i>
+        <div>
+          <h2>Skills Archive</h2>
+          <p style="margin: 0; font-size:0.65rem; opacity:0.7;">Filter &amp; Explore</p>
+        </div>
+      </div>
+      <button onclick="toggleSidebar(false)" class="sidebar-close-btn" aria-label="Close sidebar">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="sidebar-search-box">
+      <div class="sidebar-search-input-wrapper">
+        <i class="fas fa-search"></i>
+        <input type="text" id="sidebarSearch" placeholder="Search skills, category, level..." class="sidebar-search-input">
+      </div>
+    </div>
+    <div id="allSkillsList" class="sidebar-content">
+      <!-- Rendered dynamically via JavaScript -->
+    </div>
+    <div id="sidebarNoResults" class="sidebar-no-results">
+      <i class="fas fa-box-open"></i>
+      <h4>No skills found</h4>
+      <p style="font-size:0.8rem; opacity:0.7;">Try searching with different keywords.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
