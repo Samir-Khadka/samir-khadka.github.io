@@ -1956,7 +1956,7 @@ section.tight {
 /* FIX 5: contrast scrims behind over-video content */
 .glass-card, .tl-item { position: relative; }
 .glass-card::before {
-  content: \"\";
+  content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.15));
@@ -2001,6 +2001,6 @@ section.tight {
 
 /* FIX 1: prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
-  .bg-video, video[class*=\"bg\"] { display: none !important; }
+  .bg-video, video[class*="bg"] { display: none !important; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
 }
