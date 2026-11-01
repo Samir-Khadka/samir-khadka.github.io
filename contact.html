@@ -1,24 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — Samir Khadka</title>
-  <meta name="description" content="Get in touch with Samir Khadka — full stack developer, DevOps enthusiast, and graphic designer based in Nepal.">
-  <link rel="canonical" href="https://samir-khadka.com.np/contact.html"> <link rel="icon" type="image/svg+xml" href="/favicon.svg"> <meta name="theme-color" content="#0f172a"> <meta property="og:type" content="website"> <meta property="og:site_name" content="Samir Khadka"> <meta property="og:title" content="Contact — Samir Khadka"> <meta property="og:description" content="Get in touch with Samir Khadka — full-stack developer and designer based in Urlabari, Nepal."> <meta property="og:url" content="https://samir-khadka.com.np/contact.html"> <meta name="twitter:card" content="summary_large_image"> <meta name="twitter:title" content="Contact — Samir Khadka"> <meta name="twitter:description" content="Get in touch with Samir Khadka — full-stack developer and designer based in Urlabari, Nepal.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta name="description" content="Get in touch with Samir Khadka — full-stack developer and DevOps enthusiast based in Nepal. Open to remote roles and freelance work.">
+  <link rel="canonical" href="https://samir-khadka.com.np/contact.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#FAF6ED">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Samir Khadka">
+  <meta property="og:title" content="Contact — Samir Khadka">
+  <meta property="og:description" content="Get in touch with Samir Khadka — full-stack developer based in Urlabari, Nepal.">
+  <meta property="og:url" content="https://samir-khadka.com.np/contact.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact — Samir Khadka">
+  <meta name="twitter:description" content="Get in touch with Samir Khadka — full-stack developer based in Urlabari, Nepal.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=4">
-  <script>!function(){var t=localStorage.getItem('portfolioTheme');document.documentElement.setAttribute('data-theme',t||'dark');}();</script>
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
-
-  <!-- Screen background fixed video container -->
-  <div class="bg-container">
-    <video id="bgVideo" class="bg-video" autoplay loop muted playsinline></video>
-  </div>
-  <div class="video-overlay"></div>
 
   <!-- Header Navigation -->
   <header class="site-head">
@@ -27,42 +30,38 @@
         <img src="assets/profile.jpg" alt="Samir Khadka Profile Photo" class="brand-avatar">
         Samir Khadka
       </a>
-      <nav class="links">
+      <nav class="links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="projects.html">Projects</a>
         <a href="interests.html">Other Interests</a>
         <a href="contact.html" class="active">Contact</a>
       </nav>
       <div class="header-actions">
-        <button onclick="toggleTheme()" class="theme-toggle-btn" id="themeBtn" aria-label="Switch theme">
-          <span class="theme-icon">☀️</span><span class="theme-label">Light</span>
-        </button>
         <button onclick="toggleSidebar(true)" class="drawer-toggle-btn" aria-label="Open Skills Drawer">
           <i class="fas fa-layer-group"></i> <span class="drawer-label">Skills</span>
         </button>
-        <button class="nav-toggle" aria-label="Toggle menu">
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero reveal-up" style="padding-bottom: 40px;">
+  <!-- Hero -->
+  <section class="hero reveal-up" style="padding-bottom: 24px;">
     <div class="hero-inner">
       <div class="eyebrow">Let's talk</div>
-      <h1 class="heading-cinematic">Get in touch</h1>
-      <p class="lead" style="margin-top: 16px;">Open to full-stack roles, freelance design work, and anything interesting in between.</p>
+      <h1>Get in <span class="accent">touch</span>.</h1>
+      <p class="lead" style="margin-top: 16px;">Open to full-stack roles, freelance work, and anything interesting in between.</p>
     </div>
   </section>
 
-  <!-- Contact Information Grid -->
+  <!-- Contact Information -->
   <section class="reveal-up">
     <div class="section-inner">
-      <div class="glass-card">
+      <div class="card">
         <div class="contact-grid">
-          
-          <!-- Column 1: Core Channels -->
+
           <div>
             <div class="contact-row">
               <span class="label">Email</span>
@@ -77,8 +76,7 @@
               <span class="val mono"><i class="fas fa-map-marker-alt"></i> Urlabari, Nepal</span>
             </div>
           </div>
-          
-          <!-- Column 2: Web Profiles -->
+
           <div>
             <div class="contact-row">
               <span class="label">GitHub</span>
@@ -103,7 +101,7 @@
   <footer class="site-foot">
     <div class="foot-inner">
       <span>© 2026 Samir Khadka.</span>
-      <div style="display:flex;gap:20px;">
+      <div>
         <a href="https://linkedin.com/in/khadka-samir" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
         <a href="https://github.com/Samir-Khadka" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
         <a href="mailto:samirshirjan890@gmail.com"><i class="fas fa-envelope"></i> Email</a>
@@ -111,16 +109,12 @@
     </div>
   </footer>
 
-  <!-- Floating bottom interactive buttons -->
+  <!-- Floating info button -->
   <button onclick="toggleInfoModal(true)" class="info-btn" aria-label="About Samir Khadka">
     <i class="fas fa-info"></i>
   </button>
-  
-  <button id="bg-toggle" class="bg-toggle" onclick="toggleBgVideo()" aria-label="Pause background video" aria-pressed="false">⏸</button><button onclick="changeBackground()" class="change-bg-btn" aria-label="Change Background Video">
-    <i class="fas fa-random"></i> <span>Change BG</span>
-  </button>
 
-  <!-- Centered Popup Bio Modal -->
+  <!-- About Modal -->
   <div id="aboutModal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="About Samir Khadka">
     <div class="modal-box">
       <button onclick="toggleInfoModal(false)" class="modal-close-btn" aria-label="Close modal">
@@ -130,17 +124,17 @@
         <img src="assets/profile.jpg" alt="Samir Khadka Profile Photo" class="modal-profile-img">
         <div class="modal-profile-title">
           <h2>Samir Khadka</h2>
-          <p>Developer &amp; Designer</p>
+          <p>Full-Stack Developer</p>
         </div>
       </div>
       <div class="modal-bio">
-        <p>Samir Khadka is a full stack software developer, graphic designer, and competitive chess player from Urlabari, Nepal.</p>
-        <p>Recent BSc CSIT graduate (2022 — 2026) who has represented Nepal at the U-16 World Youth Chess Olympiad. Passionate about building premium visual web interfaces and solid DevOps/Cloud deployment automation.</p>
+        <p>Samir Khadka is a full-stack software developer and competitive chess player from Urlabari, Nepal.</p>
+        <p>Recent BSc CSIT graduate (2022 — 2026) who has represented Nepal at the U-16 World Youth Chess Olympiad. Builds complete products end to end — React, Node.js, Python, with solid DevOps/Cloud deployment automation.</p>
       </div>
     </div>
   </div>
 
-  <!-- Sidebar Drawer Overlay and Drawer -->
+  <!-- Sidebar Drawer -->
   <div id="sidebarOverlay" class="sidebar-overlay"></div>
   <div id="sidebarDrawer" class="sidebar-drawer" role="dialog" aria-modal="true" aria-label="Skills Archive">
     <div class="sidebar-header">
@@ -161,9 +155,7 @@
         <input type="text" id="sidebarSearch" placeholder="Search skills, category, level..." class="sidebar-search-input">
       </div>
     </div>
-    <div id="allSkillsList" class="sidebar-content">
-      <!-- Rendered dynamically via JavaScript -->
-    </div>
+    <div id="allSkillsList" class="sidebar-content"></div>
     <div id="sidebarNoResults" class="sidebar-no-results">
       <i class="fas fa-box-open"></i>
       <h4>No skills found</h4>
@@ -171,7 +163,7 @@
     </div>
   </div>
 
-  <script src="script.js?v=4"></script><script>window.toggleBgVideo=function(){var v=document.getElementById('bgVideo'),b=document.getElementById('bg-toggle');if(v.paused){v.play();b.textContent='⏸'}else{v.pause();b.textContent='▶'}};</script>
-<script src="a11y-dialogs.js"></script>
+  <script src="script.js?v=5"></script>
+  <script src="a11y-dialogs.js"></script>
 </body>
 </html>

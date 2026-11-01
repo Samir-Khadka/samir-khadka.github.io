@@ -1,24 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects — Samir Khadka</title>
-  <meta name="description" content="Projects by Samir Khadka — full stack web development, backend engineering, DevOps integrations, and AI applications.">
-  <link rel="canonical" href="https://samir-khadka.com.np/projects.html"> <link rel="icon" type="image/svg+xml" href="/favicon.svg"> <meta name="theme-color" content="#0f172a"> <meta property="og:type" content="website"> <meta property="og:site_name" content="Samir Khadka"> <meta property="og:title" content="Projects — Samir Khadka"> <meta property="og:description" content="Selected projects by Samir Khadka: cricket scoreboard, grocery MERN app, career development platform and more."> <meta property="og:url" content="https://samir-khadka.com.np/projects.html"> <meta name="twitter:card" content="summary_large_image"> <meta name="twitter:title" content="Projects — Samir Khadka"> <meta name="twitter:description" content="Selected projects by Samir Khadka: cricket scoreboard, grocery MERN app, career development platform and more.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta name="description" content="13 shipped projects by Samir Khadka — full-stack apps, DevOps platforms, AI/ML tools, and bilingual web experiences, all live and open source.">
+  <link rel="canonical" href="https://samir-khadka.com.np/projects.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#FAF6ED">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Samir Khadka">
+  <meta property="og:title" content="Projects — Samir Khadka">
+  <meta property="og:description" content="13 shipped projects: cricket scoring, agri marketplace, Vedic astrology, DevOps platform, disaster management and more.">
+  <meta property="og:url" content="https://samir-khadka.com.np/projects.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Projects — Samir Khadka">
+  <meta name="twitter:description" content="13 shipped projects: cricket scoring, agri marketplace, Vedic astrology, DevOps platform, disaster management and more.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=4">
-  <script>!function(){var t=localStorage.getItem('portfolioTheme');document.documentElement.setAttribute('data-theme',t||'dark');}();</script>
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
-
-  <!-- Screen background fixed video container -->
-  <div class="bg-container">
-    <video id="bgVideo" class="bg-video" autoplay loop muted playsinline></video>
-  </div>
-  <div class="video-overlay"></div>
 
   <!-- Header Navigation -->
   <header class="site-head">
@@ -27,186 +30,207 @@
         <img src="assets/profile.jpg" alt="Samir Khadka Profile Photo" class="brand-avatar">
         Samir Khadka
       </a>
-      <nav class="links">
+      <nav class="links" id="navLinks">
         <a href="index.html">Home</a>
         <a href="projects.html" class="active">Projects</a>
         <a href="interests.html">Other Interests</a>
         <a href="contact.html">Contact</a>
       </nav>
       <div class="header-actions">
-        <button onclick="toggleTheme()" class="theme-toggle-btn" id="themeBtn" aria-label="Switch theme">
-          <span class="theme-icon">☀️</span><span class="theme-label">Light</span>
-        </button>
         <button onclick="toggleSidebar(true)" class="drawer-toggle-btn" aria-label="Open Skills Drawer">
           <i class="fas fa-layer-group"></i> <span class="drawer-label">Skills</span>
         </button>
-        <button class="nav-toggle" aria-label="Toggle menu">
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero reveal-up" style="padding-bottom: 40px;">
+  <!-- Hero -->
+  <section class="hero reveal-up" style="padding-bottom: 24px;">
     <div class="hero-inner">
       <div class="eyebrow">Selected work</div>
-      <h1 class="heading-cinematic">Projects</h1>
-      <p class="lead" style="margin-top: 16px;">Real problems, built end to end — from data model to interface.</p>
+      <h1>Thirteen projects, <span class="accent">shipped live</span>.</h1>
+      <p class="lead" style="margin-top: 16px;">Real problems, built end to end — from data model to deployed interface. Every one is open source and running.</p>
     </div>
   </section>
 
-  <!-- Project Cards List -->
+  <!-- Project Cards -->
   <section class="reveal-up">
-    <div class="section-inner" style="display: flex; flex-direction: column; gap: 32px;">
+    <div class="section-inner">
+      <div class="project-grid">
 
-      <!-- Project 1 -->
-      <div class="glass-card">
-        <div class="project-card-layout">
+        <div class="project-card">
           <div class="project-num">01</div>
-          <div>
-            <h3 class="project-title">Live Cricket Scoreboard</h3>
-            <p>Full-stack application for local cricket tournaments, built to digitize scoring and boost fan engagement. Provides real-time score updates, ball-by-ball tracking, and secure role-based access for scorers and organizers — designed for grassroots tournaments to replace paper-based scoring.</p>
-            <div class="tag-row">
-              <span class="tag">React</span>
-              <span class="tag">Node.js</span>
-              <span class="tag">Express</span>
-              <span class="tag">MongoDB</span>
-              <span class="tag">Mongoose</span>
-              <span class="tag">WebSocket</span>
-              <span class="tag">Tailwind CSS</span>
-              <span class="tag">Vite</span>
-            </div>
-            <div class="proj-links">
-              <a href="https://github.com/Samir-Khadka/cricscore" target="_blank" rel="noopener" aria-label="View Live Cricket Scoreboard on GitHub">View on GitHub <i class="fas fa-arrow-right"></i></a>
-            </div>
+          <h3>CricScore-v2</h3>
+          <p>Event-sourced cricket scoring engine with a React 19 mobile scorer console and pro viewer — ball-by-ball updates, win probability, secured scoring API.</p>
+          <div class="tag-row">
+            <span class="tag">React 19</span><span class="tag">Node.js</span><span class="tag">MongoDB</span><span class="tag">JWT</span><span class="tag">Event Sourcing</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://cricscore-v2.wasmer.app" target="_blank" rel="noopener" class="live"><i class="fas fa-external-link-alt"></i> Live demo</a>
           </div>
         </div>
-      </div>
 
-      <!-- Project 2 -->
-      <div class="glass-card">
-        <div class="project-card-layout">
+        <div class="project-card">
           <div class="project-num">02</div>
-          <div>
-            <h3 class="project-title">Fresh Grocery Mart</h3>
-            <p>A MERN-stack online grocery store featuring a responsive product catalog, user shopping cart, and persistent checkout order flow built on a MongoDB/Express/React/Node foundation.</p>
-            <div class="tag-row">
-              <span class="tag">MongoDB</span>
-              <span class="tag">Express</span>
-              <span class="tag">React</span>
-              <span class="tag">Node.js</span>
-            </div>
-            <div class="proj-links">
-              <a href="https://github.com/Samir-Khadka/Fresh-Grocery-mart-MERN-Project" target="_blank" rel="noopener" aria-label="View Fresh Grocery Mart on GitHub">View on GitHub <i class="fas fa-arrow-right"></i></a>
-            </div>
+          <h3>Kishan-Bazzar</h3>
+          <p>Bilingual Nepali/English agri marketplace — bid/offer system, Crop Doctor, machinery rentals, price trends, and a trilingual AI assistant for farmers.</p>
+          <div class="tag-row">
+            <span class="tag">Flask</span><span class="tag">SQLite</span><span class="tag">JWT</span><span class="tag">Nepali/English</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://kishan-bazzar.onrender.com" target="_blank" rel="noopener" class="live"><i class="fas fa-external-link-alt"></i> Live demo</a>
+            <a href="https://github.com/Samir-Khadka/Kishan-Bazzar" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
           </div>
         </div>
-      </div>
 
-      <!-- Project 3 -->
-      <div class="glass-card">
-        <div class="project-card-layout">
+        <div class="project-card">
           <div class="project-num">03</div>
-          <div>
-            <h3 class="project-title">Student Career Development App</h3>
-            <p>A Laravel-based platform built to help students plan and track career development, featuring mentoring resources, student milestones, and progress tracking in a centralized place.</p>
-            <div class="tag-row">
-              <span class="tag">Laravel</span>
-              <span class="tag">PHP</span>
-              <span class="tag">MongoDB</span>
-            </div>
-            <div class="proj-links">
-              <a href="https://github.com/Samir-Khadka/Student-Career-Development-App-laravel" target="_blank" rel="noopener" aria-label="View Student Career Development App on GitHub">View on GitHub <i class="fas fa-arrow-right"></i></a>
-            </div>
+          <h3>Vedic Astro</h3>
+          <p>Bilingual Vedic astrology platform — Lagna + Navamsa kundali, 16 vargas, classical dashas, Shadbala, KP, Jaimini, predictive intelligence, and a 25-chapter PDF report.</p>
+          <div class="tag-row">
+            <span class="tag">FastAPI</span><span class="tag">pyswisseph</span><span class="tag">Lahiri</span><span class="tag">EN/नेपाली</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://vedic-astro-ggel.onrender.com" target="_blank" rel="noopener" class="live"><i class="fas fa-external-link-alt"></i> Live demo</a>
+            <a href="https://github.com/Samir-Khadka/vedic-astro" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
           </div>
         </div>
-      </div>
 
-      <!-- Project 4 -->
-      <div class="glass-card">
-        <div class="project-card-layout">
+        <div class="project-card">
           <div class="project-num">04</div>
-          <div>
-            <h3 class="project-title">CommunityShare</h3>
-            <p>A cross-stack community resource-sharing platform, combining a Flutter mobile front end with robust Python and Java microservices on the backend for item cataloging and sharing logistics.</p>
-            <div class="tag-row">
-              <span class="tag">Flutter</span>
-              <span class="tag">Python</span>
-              <span class="tag">Java</span>
-            </div>
-            <div class="proj-links">
-              <a href="https://github.com/Samir-Khadka/communityshare-flutter-python-java" target="_blank" rel="noopener" aria-label="View CommunityShare on GitHub">View on GitHub <i class="fas fa-arrow-right"></i></a>
-            </div>
+          <h3>TaskBoard DevOps</h3>
+          <p>Full DevOps showcase — Node API with multi-stage Docker, Compose observability stack, GitHub Actions CI, Terraform on AWS, Ansible, and Kubernetes manifests.</p>
+          <div class="tag-row">
+            <span class="tag">Node.js</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Terraform</span><span class="tag">Prometheus</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://taskboard-web-ykc3.onrender.com" target="_blank" rel="noopener" class="live"><i class="fas fa-external-link-alt"></i> Live demo</a>
+            <a href="https://github.com/Samir-Khadka/taskboard-devops" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
           </div>
         </div>
-      </div>
 
-      <!-- Project 5 -->
-      <div class="glass-card">
-        <div class="project-card-layout">
+        <div class="project-card">
           <div class="project-num">05</div>
-          <div>
-            <h3 class="project-title">Structify AI</h3>
-            <p>An AI-powered automation tool that converts unstructured text data into clean, structured schemas — built on a modern Next.js/TypeScript stack with Prisma for the database schema integrations.</p>
-            <div class="tag-row">
-              <span class="tag">Next.js</span>
-              <span class="tag">TypeScript</span>
-              <span class="tag">Prisma</span>
-              <span class="tag">Python</span>
-            </div>
-            <div class="proj-links">
-              <a href="https://github.com/Samir-Khadka/Structify-AI--AI-powered-unstructured-data-to-structured-data-converter" target="_blank" rel="noopener" aria-label="View Structify AI on GitHub">View on GitHub <i class="fas fa-arrow-right"></i></a>
-            </div>
+          <h3>FitTrack Pro</h3>
+          <p>Workout tracking web app — auth, workout logger with rest timer, 32-exercise library, personal records, measurements with SVG charts, and goals.</p>
+          <div class="tag-row">
+            <span class="tag">React 19</span><span class="tag">Vite</span><span class="tag">JWT</span><span class="tag">MongoDB</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://fittrack-web-afi4.onrender.com" target="_blank" rel="noopener" class="live"><i class="fas fa-external-link-alt"></i> Live demo</a>
+            <a href="https://github.com/Samir-Khadka/Fitnessweb-app" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
           </div>
         </div>
-      </div>
 
-      <!-- Project 6 -->
-      <div class="glass-card">
-        <div class="project-card-layout">
+        <div class="project-card">
           <div class="project-num">06</div>
-          <div>
-            <h3 class="project-title">Student Management System</h3>
-            <p>A secure administrative system for managing student records, academic results, and billing data, built with a Python server and an Angular administrative front end.</p>
-            <div class="tag-row">
-              <span class="tag">Python</span>
-              <span class="tag">Angular</span>
-              <span class="tag">MongoDB</span>
-            </div>
-            <div class="proj-links">
-              <a href="https://github.com/Samir-Khadka/student-management-system-python-angular-fullstack-development" target="_blank" rel="noopener" aria-label="View Student Management System on GitHub">View on GitHub <i class="fas fa-arrow-right"></i></a>
-            </div>
+          <h3>Suraksha</h3>
+          <p>Disaster management for all 77 districts of Nepal — live quakes, DHM river gauges, weather chain, GLOF lake registry, and an honest live/verified/model data contract.</p>
+          <div class="tag-row">
+            <span class="tag">FastAPI</span><span class="tag">Leaflet</span><span class="tag">USGS</span><span class="tag">DHM</span><span class="tag">EN/नेपाली</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://suraksha-r6l4.onrender.com" target="_blank" rel="noopener" class="live"><i class="fas fa-external-link-alt"></i> Live demo</a>
+            <a href="https://github.com/Samir-Khadka/suraksha" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
           </div>
         </div>
-      </div>
 
-      <!-- Project 7 -->
-      <div class="glass-card">
-        <div class="project-card-layout">
+        <div class="project-card">
           <div class="project-num">07</div>
-          <div>
-            <h3 class="project-title">Real Estate Platform</h3>
-            <p>A full-featured real estate listing application supporting property searching, media uploading, and broker management. Powered by a Python backend and an Angular customer-facing portal.</p>
-            <div class="tag-row">
-              <span class="tag">Python</span>
-              <span class="tag">Angular</span>
-              <span class="tag">MongoDB</span>
-            </div>
-            <div class="proj-links">
-              <a href="https://github.com/Samir-Khadka/RealEstate-fullstack-development-using-python-angular" target="_blank" rel="noopener" aria-label="View Real Estate Platform on GitHub">View on GitHub <i class="fas fa-arrow-right"></i></a>
-            </div>
+          <h3>Invoice Fraud Checker</h3>
+          <p>Six explainable fraud-detection rules for invoices — duplicate and bank-change flags, math checks, OCR via Tesseract, mobile-first review flow. Never a bare score.</p>
+          <div class="tag-row">
+            <span class="tag">FastAPI</span><span class="tag">SQLite</span><span class="tag">Tesseract OCR</span><span class="tag">Rule Engine</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://github.com/Samir-Khadka/invoice-fraud-checker" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
           </div>
         </div>
-      </div>
 
+        <div class="project-card">
+          <div class="project-num">08</div>
+          <h3>Sahayak Voice Assistant</h3>
+          <p>Bilingual English/Nepali voice assistant — Windows Python core with hybrid speech and system control, plus a native Android app with always-on "Jarvis" wake word.</p>
+          <div class="tag-row">
+            <span class="tag">Python</span><span class="tag">Kotlin</span><span class="tag">Porcupine</span><span class="tag">EN/NE</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://github.com/Samir-Khadka/sahayak-voice-assistant" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-num">09</div>
+          <h3>Messaging API</h3>
+          <p>One API for SMS, WhatsApp, RCS, and OTP — HMAC-hashed one-time codes, rate limits, provider adapters for Twilio and Meta WhatsApp Cloud.</p>
+          <div class="tag-row">
+            <span class="tag">FastAPI</span><span class="tag">OTP</span><span class="tag">Twilio</span><span class="tag">WhatsApp</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://messaging-api-vv7f.onrender.com" target="_blank" rel="noopener" class="live"><i class="fas fa-external-link-alt"></i> Live demo</a>
+            <a href="https://github.com/Samir-Khadka/messaging-api" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-num">10</div>
+          <h3>Football Match Analyzer</h3>
+          <p>Video → tactical report pipeline — YOLO detection, ByteTrack tracking, pitch homography calibration, xG heuristics, heatmaps, pass networks, and highlight clips.</p>
+          <div class="tag-row">
+            <span class="tag">YOLOv8</span><span class="tag">PyTorch</span><span class="tag">ByteTrack</span><span class="tag">FastAPI</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://github.com/Samir-Khadka/football-match-analyzer" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-num">11</div>
+          <h3>Job Offer Verifier</h3>
+          <p>Red-flag rule engine protecting Nepali migrant workers from offer fraud — upfront-fee, pressure-language, and contract-substitution detection with DoFE guidance.</p>
+          <div class="tag-row">
+            <span class="tag">Python</span><span class="tag">Rule Engine</span><span class="tag">Safety-first</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://github.com/Samir-Khadka/job-offer-verifier" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-num">12</div>
+          <h3>Hindu Books</h3>
+          <p>Eight complete Hindu scriptures in English and Nepali — Bhagavad Gita, Hanuman Chalisa, Ramayana, Upanishads, Vedas, Puranas, Mahabharata, Bhagavata Purana.</p>
+          <div class="tag-row">
+            <span class="tag">FastAPI</span><span class="tag">Jinja2</span><span class="tag">EN/नेपाली</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://github.com/Samir-Khadka/hindu-books" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-num">13</div>
+          <h3>Social Poster</h3>
+          <p>All-in-one cross-posting agent — one command publishes to Instagram, Facebook, and Threads, with X, YouTube, and TikTok wired through official APIs.</p>
+          <div class="tag-row">
+            <span class="tag">Python</span><span class="tag">Meta APIs</span><span class="tag">YouTube API</span><span class="tag">X API</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://github.com/Samir-Khadka/social-poster" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
   <!-- More Info Card -->
-  <section class="reveal-up tight">
+  <section class="reveal-up" style="padding-top: 0;">
     <div class="section-inner">
-      <div class="glass-card">
+      <div class="card">
         <p class="eyebrow" style="margin-bottom:10px;">More on the way</p>
         <p class="lead" style="margin-bottom:0;">This page grows as new projects ship. Have something in mind you'd like built? <a href="contact.html" style="text-decoration: underline; text-underline-offset: 4px;">Let's talk</a>.</p>
       </div>
@@ -217,7 +241,7 @@
   <footer class="site-foot">
     <div class="foot-inner">
       <span>© 2026 Samir Khadka.</span>
-      <div style="display:flex;gap:20px;">
+      <div>
         <a href="https://linkedin.com/in/khadka-samir" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
         <a href="https://github.com/Samir-Khadka" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
         <a href="mailto:samirshirjan890@gmail.com"><i class="fas fa-envelope"></i> Email</a>
@@ -225,16 +249,12 @@
     </div>
   </footer>
 
-  <!-- Floating bottom interactive buttons -->
+  <!-- Floating info button -->
   <button onclick="toggleInfoModal(true)" class="info-btn" aria-label="About Samir Khadka">
     <i class="fas fa-info"></i>
   </button>
-  
-  <button id="bg-toggle" class="bg-toggle" onclick="toggleBgVideo()" aria-label="Pause background video" aria-pressed="false">⏸</button><button onclick="changeBackground()" class="change-bg-btn" aria-label="Change Background Video">
-    <i class="fas fa-random"></i> <span>Change BG</span>
-  </button>
 
-  <!-- Centered Popup Bio Modal -->
+  <!-- About Modal -->
   <div id="aboutModal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="About Samir Khadka">
     <div class="modal-box">
       <button onclick="toggleInfoModal(false)" class="modal-close-btn" aria-label="Close modal">
@@ -244,17 +264,17 @@
         <img src="assets/profile.jpg" alt="Samir Khadka Profile Photo" class="modal-profile-img">
         <div class="modal-profile-title">
           <h2>Samir Khadka</h2>
-          <p>Developer &amp; Designer</p>
+          <p>Full-Stack Developer</p>
         </div>
       </div>
       <div class="modal-bio">
-        <p>Samir Khadka is a full stack software developer, graphic designer, and competitive chess player from Urlabari, Nepal.</p>
-        <p>Recent BSc CSIT graduate (2022 — 2026) who has represented Nepal at the U-16 World Youth Chess Olympiad. Passionate about building premium visual web interfaces and solid DevOps/Cloud deployment automation.</p>
+        <p>Samir Khadka is a full-stack software developer and competitive chess player from Urlabari, Nepal.</p>
+        <p>Recent BSc CSIT graduate (2022 — 2026) who has represented Nepal at the U-16 World Youth Chess Olympiad. Builds complete products end to end — React, Node.js, Python, with solid DevOps/Cloud deployment automation.</p>
       </div>
     </div>
   </div>
 
-  <!-- Sidebar Drawer Overlay and Drawer -->
+  <!-- Sidebar Drawer -->
   <div id="sidebarOverlay" class="sidebar-overlay"></div>
   <div id="sidebarDrawer" class="sidebar-drawer" role="dialog" aria-modal="true" aria-label="Skills Archive">
     <div class="sidebar-header">
@@ -275,9 +295,7 @@
         <input type="text" id="sidebarSearch" placeholder="Search skills, category, level..." class="sidebar-search-input">
       </div>
     </div>
-    <div id="allSkillsList" class="sidebar-content">
-      <!-- Rendered dynamically via JavaScript -->
-    </div>
+    <div id="allSkillsList" class="sidebar-content"></div>
     <div id="sidebarNoResults" class="sidebar-no-results">
       <i class="fas fa-box-open"></i>
       <h4>No skills found</h4>
@@ -285,7 +303,7 @@
     </div>
   </div>
 
-  <script src="script.js?v=4"></script><script>window.toggleBgVideo=function(){var v=document.getElementById('bgVideo'),b=document.getElementById('bg-toggle');if(v.paused){v.play();b.textContent='⏸'}else{v.pause();b.textContent='▶'}};</script>
-<script src="a11y-dialogs.js"></script>
+  <script src="script.js?v=5"></script>
+  <script src="a11y-dialogs.js"></script>
 </body>
 </html>
