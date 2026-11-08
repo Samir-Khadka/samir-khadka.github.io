@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="Projects — Samir Khadka">
   <meta name="twitter:description" content="13 shipped projects: cricket scoring, agri marketplace, Vedic astrology, DevOps platform, disaster management and more.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -51,7 +51,10 @@
   <section class="hero reveal-up" style="padding-bottom: 24px;">
     <div class="hero-inner">
       <div class="eyebrow">Selected work</div>
-      <h1>Thirteen projects, <span class="accent">shipped live</span>.</h1>
+      <h1 class="hero-display">
+        <span class="line">Thirteen projects,</span>
+        <span class="line"><span class="accent">shipped live.</span></span>
+      </h1>
       <p class="lead" style="margin-top: 16px;">Real problems, built end to end — from data model to deployed interface. Every one is open source and running.</p>
     </div>
   </section>
@@ -59,24 +62,28 @@
   <!-- Project Cards -->
   <section class="reveal-up">
     <div class="section-inner">
-      <div class="project-grid">
+      <div class="project-list">
 
-        <div class="project-card">
+        <div class="project-row">
           <div class="project-num">01</div>
-          <h3>CricScore-v2</h3>
-          <p>Event-sourced cricket scoring engine with a React 19 mobile scorer console and pro viewer — ball-by-ball updates, win probability, secured scoring API.</p>
+          <div>
+            <h3>CricScore-v2 <span class="arrow">↗</span></h3>
+            <p>Event-sourced cricket scoring engine with a React 19 mobile scorer console and pro viewer — ball-by-ball updates, win probability, secured scoring API.</p>
           <div class="tag-row">
             <span class="tag">React 19</span><span class="tag">Node.js</span><span class="tag">MongoDB</span><span class="tag">JWT</span><span class="tag">Event Sourcing</span>
           </div>
           <div class="proj-links">
             <a href="https://cricscore-v2.wasmer.app" target="_blank" rel="noopener" class="live"><i class="fas fa-external-link-alt"></i> Live demo</a>
           </div>
+          </div>
+          <div class="row-side">REACT 19<br>EVENT SOURCING</div>
         </div>
 
-        <div class="project-card">
+        <div class="project-row">
           <div class="project-num">02</div>
-          <h3>Kishan-Bazzar</h3>
-          <p>Bilingual Nepali/English agri marketplace — bid/offer system, Crop Doctor, machinery rentals, price trends, and a trilingual AI assistant for farmers.</p>
+          <div>
+            <h3>Kishan-Bazzar <span class="arrow">↗</span></h3>
+            <p>Bilingual Nepali/English agri marketplace — bid/offer system, Crop Doctor, machinery rentals, price trends, and a trilingual AI assistant for farmers.</p>
           <div class="tag-row">
             <span class="tag">Flask</span><span class="tag">SQLite</span><span class="tag">JWT</span><span class="tag">Nepali/English</span>
           </div>
@@ -84,12 +91,15 @@
             <a href="https://kishan-bazzar.onrender.com" target="_blank" rel="noopener" class="live"><i class="fas fa-external-link-alt"></i> Live demo</a>
             <a href="https://github.com/Samir-Khadka/Kishan-Bazzar" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
           </div>
+          </div>
+          <div class="row-side">FLASK<br>NEPALI / ENGLISH</div>
         </div>
 
-        <div class="project-card">
+        <div class="project-row">
           <div class="project-num">03</div>
-          <h3>Vedic Astro</h3>
-          <p>Bilingual Vedic astrology platform — Lagna + Navamsa kundali, 16 vargas, classical dashas, Shadbala, KP, Jaimini, predictive intelligence, and a 25-chapter PDF report.</p>
+          <div>
+            <h3>Vedic Astro <span class="arrow">↗</span></h3>
+            <p>Bilingual Vedic astrology platform — Lagna + Navamsa kundali, 16 vargas, classical dashas, Shadbala, KP, Jaimini, predictive intelligence, and a 25-chapter PDF report.</p>
           <div class="tag-row">
             <span class="tag">FastAPI</span><span class="tag">pyswisseph</span><span class="tag">Lahiri</span><span class="tag">EN/नेपाली</span>
           </div>
@@ -97,12 +107,15 @@
             <a href="https://vedic-astro-ggel.onrender.com" target="_blank" rel="noopener" class="live"><i class="fas fa-external-link-alt"></i> Live demo</a>
             <a href="https://github.com/Samir-Khadka/vedic-astro" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
           </div>
+          </div>
+          <div class="row-side">FASTAPI<br>LAHIRI</div>
         </div>
 
-        <div class="project-card">
+        <div class="project-row">
           <div class="project-num">04</div>
-          <h3>TaskBoard DevOps</h3>
-          <p>Full DevOps showcase — Node API with multi-stage Docker, Compose observability stack, GitHub Actions CI, Terraform on AWS, Ansible, and Kubernetes manifests.</p>
+          <div>
+            <h3>TaskBoard DevOps <span class="arrow">↗</span></h3>
+            <p>Full DevOps showcase — Node API with multi-stage Docker, Compose observability stack, GitHub Actions CI, Terraform on AWS, Ansible, and Kubernetes manifests.</p>
           <div class="tag-row">
             <span class="tag">Node.js</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Terraform</span><span class="tag">Prometheus</span>
           </div>
@@ -110,12 +123,15 @@
             <a href="https://taskboard-web-ykc3.onrender.com" target="_blank" rel="noopener" class="live"><i class="fas fa-external-link-alt"></i> Live demo</a>
             <a href="https://github.com/Samir-Khadka/taskboard-devops" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
           </div>
+          </div>
+          <div class="row-side">DOCKER<br>KUBERNETES</div>
         </div>
 
-        <div class="project-card">
+        <div class="project-row">
           <div class="project-num">05</div>
-          <h3>FitTrack Pro</h3>
-          <p>Workout tracking web app — auth, workout logger with rest timer, 32-exercise library, personal records, measurements with SVG charts, and goals.</p>
+          <div>
+            <h3>FitTrack Pro <span class="arrow">↗</span></h3>
+            <p>Workout tracking web app — auth, workout logger with rest timer, 32-exercise library, personal records, measurements with SVG charts, and goals.</p>
           <div class="tag-row">
             <span class="tag">React 19</span><span class="tag">Vite</span><span class="tag">JWT</span><span class="tag">MongoDB</span>
           </div>
@@ -123,12 +139,15 @@
             <a href="https://fittrack-web-afi4.onrender.com" target="_blank" rel="noopener" class="live"><i class="fas fa-external-link-alt"></i> Live demo</a>
             <a href="https://github.com/Samir-Khadka/Fitnessweb-app" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
           </div>
+          </div>
+          <div class="row-side">REACT 19<br>VITE</div>
         </div>
 
-        <div class="project-card">
+        <div class="project-row">
           <div class="project-num">06</div>
-          <h3>Suraksha</h3>
-          <p>Disaster management for all 77 districts of Nepal — live quakes, DHM river gauges, weather chain, GLOF lake registry, and an honest live/verified/model data contract.</p>
+          <div>
+            <h3>Suraksha <span class="arrow">↗</span></h3>
+            <p>Disaster management for all 77 districts of Nepal — live quakes, DHM river gauges, weather chain, GLOF lake registry, and an honest live/verified/model data contract.</p>
           <div class="tag-row">
             <span class="tag">FastAPI</span><span class="tag">Leaflet</span><span class="tag">USGS</span><span class="tag">DHM</span><span class="tag">EN/नेपाली</span>
           </div>
@@ -136,36 +155,45 @@
             <a href="https://suraksha-r6l4.onrender.com" target="_blank" rel="noopener" class="live"><i class="fas fa-external-link-alt"></i> Live demo</a>
             <a href="https://github.com/Samir-Khadka/suraksha" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
           </div>
+          </div>
+          <div class="row-side">FASTAPI<br>LEAFLET</div>
         </div>
 
-        <div class="project-card">
+        <div class="project-row">
           <div class="project-num">07</div>
-          <h3>Invoice Fraud Checker</h3>
-          <p>Six explainable fraud-detection rules for invoices — duplicate and bank-change flags, math checks, OCR via Tesseract, mobile-first review flow. Never a bare score.</p>
+          <div>
+            <h3>Invoice Fraud Checker <span class="arrow">↗</span></h3>
+            <p>Six explainable fraud-detection rules for invoices — duplicate and bank-change flags, math checks, OCR via Tesseract, mobile-first review flow. Never a bare score.</p>
           <div class="tag-row">
             <span class="tag">FastAPI</span><span class="tag">SQLite</span><span class="tag">Tesseract OCR</span><span class="tag">Rule Engine</span>
           </div>
           <div class="proj-links">
             <a href="https://github.com/Samir-Khadka/invoice-fraud-checker" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
           </div>
+          </div>
+          <div class="row-side">FASTAPI<br>OCR</div>
         </div>
 
-        <div class="project-card">
+        <div class="project-row">
           <div class="project-num">08</div>
-          <h3>Sahayak Voice Assistant</h3>
-          <p>Bilingual English/Nepali voice assistant — Windows Python core with hybrid speech and system control, plus a native Android app with always-on "Jarvis" wake word.</p>
+          <div>
+            <h3>Sahayak Voice Assistant <span class="arrow">↗</span></h3>
+            <p>Bilingual English/Nepali voice assistant — Windows Python core with hybrid speech and system control, plus a native Android app with always-on "Jarvis" wake word.</p>
           <div class="tag-row">
             <span class="tag">Python</span><span class="tag">Kotlin</span><span class="tag">Porcupine</span><span class="tag">EN/NE</span>
           </div>
           <div class="proj-links">
             <a href="https://github.com/Samir-Khadka/sahayak-voice-assistant" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
           </div>
+          </div>
+          <div class="row-side">PYTHON<br>KOTLIN</div>
         </div>
 
-        <div class="project-card">
+        <div class="project-row">
           <div class="project-num">09</div>
-          <h3>Messaging API</h3>
-          <p>One API for SMS, WhatsApp, RCS, and OTP — HMAC-hashed one-time codes, rate limits, provider adapters for Twilio and Meta WhatsApp Cloud.</p>
+          <div>
+            <h3>Messaging API <span class="arrow">↗</span></h3>
+            <p>One API for SMS, WhatsApp, RCS, and OTP — HMAC-hashed one-time codes, rate limits, provider adapters for Twilio and Meta WhatsApp Cloud.</p>
           <div class="tag-row">
             <span class="tag">FastAPI</span><span class="tag">OTP</span><span class="tag">Twilio</span><span class="tag">WhatsApp</span>
           </div>
@@ -173,54 +201,68 @@
             <a href="https://messaging-api-vv7f.onrender.com" target="_blank" rel="noopener" class="live"><i class="fas fa-external-link-alt"></i> Live demo</a>
             <a href="https://github.com/Samir-Khadka/messaging-api" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
           </div>
+          </div>
+          <div class="row-side">FASTAPI<br>OTP</div>
         </div>
 
-        <div class="project-card">
+        <div class="project-row">
           <div class="project-num">10</div>
-          <h3>Football Match Analyzer</h3>
-          <p>Video → tactical report pipeline — YOLO detection, ByteTrack tracking, pitch homography calibration, xG heuristics, heatmaps, pass networks, and highlight clips.</p>
+          <div>
+            <h3>Football Match Analyzer <span class="arrow">↗</span></h3>
+            <p>Video → tactical report pipeline — YOLO detection, ByteTrack tracking, pitch homography calibration, xG heuristics, heatmaps, pass networks, and highlight clips.</p>
           <div class="tag-row">
             <span class="tag">YOLOv8</span><span class="tag">PyTorch</span><span class="tag">ByteTrack</span><span class="tag">FastAPI</span>
           </div>
           <div class="proj-links">
             <a href="https://github.com/Samir-Khadka/football-match-analyzer" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
           </div>
+          </div>
+          <div class="row-side">YOLOV8<br>PYTORCH</div>
         </div>
 
-        <div class="project-card">
+        <div class="project-row">
           <div class="project-num">11</div>
-          <h3>Job Offer Verifier</h3>
-          <p>Red-flag rule engine protecting Nepali migrant workers from offer fraud — upfront-fee, pressure-language, and contract-substitution detection with DoFE guidance.</p>
+          <div>
+            <h3>Job Offer Verifier <span class="arrow">↗</span></h3>
+            <p>Red-flag rule engine protecting Nepali migrant workers from offer fraud — upfront-fee, pressure-language, and contract-substitution detection with DoFE guidance.</p>
           <div class="tag-row">
             <span class="tag">Python</span><span class="tag">Rule Engine</span><span class="tag">Safety-first</span>
           </div>
           <div class="proj-links">
             <a href="https://github.com/Samir-Khadka/job-offer-verifier" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
           </div>
+          </div>
+          <div class="row-side">PYTHON<br>RULE ENGINE</div>
         </div>
 
-        <div class="project-card">
+        <div class="project-row">
           <div class="project-num">12</div>
-          <h3>Hindu Books</h3>
-          <p>Eight complete Hindu scriptures in English and Nepali — Bhagavad Gita, Hanuman Chalisa, Ramayana, Upanishads, Vedas, Puranas, Mahabharata, Bhagavata Purana.</p>
+          <div>
+            <h3>Hindu Books <span class="arrow">↗</span></h3>
+            <p>Eight complete Hindu scriptures in English and Nepali — Bhagavad Gita, Hanuman Chalisa, Ramayana, Upanishads, Vedas, Puranas, Mahabharata, Bhagavata Purana.</p>
           <div class="tag-row">
             <span class="tag">FastAPI</span><span class="tag">Jinja2</span><span class="tag">EN/नेपाली</span>
           </div>
           <div class="proj-links">
             <a href="https://github.com/Samir-Khadka/hindu-books" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
           </div>
+          </div>
+          <div class="row-side">FASTAPI<br>EN / NE</div>
         </div>
 
-        <div class="project-card">
+        <div class="project-row">
           <div class="project-num">13</div>
-          <h3>Social Poster</h3>
-          <p>All-in-one cross-posting agent — one command publishes to Instagram, Facebook, and Threads, with X, YouTube, and TikTok wired through official APIs.</p>
+          <div>
+            <h3>Social Poster <span class="arrow">↗</span></h3>
+            <p>All-in-one cross-posting agent — one command publishes to Instagram, Facebook, and Threads, with X, YouTube, and TikTok wired through official APIs.</p>
           <div class="tag-row">
             <span class="tag">Python</span><span class="tag">Meta APIs</span><span class="tag">YouTube API</span><span class="tag">X API</span>
           </div>
           <div class="proj-links">
             <a href="https://github.com/Samir-Khadka/social-poster" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
           </div>
+          </div>
+          <div class="row-side">PYTHON<br>META APIS</div>
         </div>
 
       </div>
