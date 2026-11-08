@@ -99,7 +99,7 @@ nav.links a.active { background: var(--violet); color: #fff; }
   padding: 8px 18px; border-radius: 999px; white-space: nowrap; box-shadow: var(--shadow);
 }
 .hero-meta { display: flex; gap: clamp(20px, 4vw, 48px); margin: 28px 0; flex-wrap: wrap; }
-.hero-meta div { display: flex; flex-direction: column; }
+.hero-meta div { display: flex; flex-direction: column; border-left: 3px solid var(--gold-bright); padding-left: 14px; }
 .hero-meta strong { font-family: var(--font); font-weight: 800; font-size: 1.9rem; letter-spacing: -0.02em; color: var(--violet-deep); }
 .hero-meta span { font-size: 0.85rem; color: var(--text-mute); }
 .btn-row { display: flex; gap: 14px; flex-wrap: wrap; }
@@ -121,6 +121,51 @@ nav.links a.active { background: var(--violet); color: #fff; }
 }
 .eyebrow::before { content: ""; display: inline-block; width: 28px; height: 2px; background: var(--gold); vertical-align: middle; margin-right: 10px; }
 .lead { font-size: clamp(1.02rem, 2vw, 1.18rem); color: var(--text-soft); max-width: 34rem; margin-bottom: 28px; }
+
+/* ---------- Availability pill (header) ---------- */
+.avail-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em;
+  color: #8a5f1c; background: var(--gold-soft);
+  border: 1px solid rgba(176, 125, 40, 0.3);
+  padding: 8px 14px; border-radius: 999px; white-space: nowrap;
+}
+.avail-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold-bright); box-shadow: 0 0 0 3px rgba(212, 162, 75, 0.25); }
+
+/* ---------- Floating tech chips (hero) ---------- */
+.hero-inner { position: relative; }
+.float-chips { position: absolute; inset: 0; pointer-events: none; }
+.float-chip {
+  position: absolute; display: inline-flex; align-items: center; gap: 7px;
+  background: #fff; border: 1px solid var(--line); border-radius: 999px;
+  box-shadow: var(--shadow); padding: 7px 14px;
+  font-size: 0.8rem; font-weight: 700; color: var(--text-soft);
+  animation: chip-float 7s ease-in-out infinite;
+}
+.float-chip i { width: 8px; height: 8px; border-radius: 50%; }
+.float-chip:nth-child(1) { right: 26%; top: 4%; animation-delay: 0s; }
+.float-chip:nth-child(2) { right: 1%; top: 30%; animation-delay: 1.4s; }
+.float-chip:nth-child(3) { right: 30%; top: 56%; animation-delay: 2.6s; }
+.float-chip:nth-child(4) { right: 3%; top: 66%; animation-delay: 0.8s; }
+@keyframes chip-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+/* ---------- Closing CTA band ---------- */
+.cta-band { border-top: 1px solid var(--line); padding: 40px 0 8px; }
+.cta-band h2 {
+  font-family: var(--font); font-weight: 800; letter-spacing: -0.03em;
+  line-height: 1.02; font-size: clamp(2.2rem, 7vw, 4.2rem); margin: 10px 0 18px;
+}
+.cta-band h2 .accent { color: var(--violet); }
+
+/* ---------- Giant footer name ---------- */
+.foot-giant {
+  font-family: var(--font); font-weight: 800; letter-spacing: -0.02em;
+  line-height: 1; text-align: center; color: var(--text);
+  font-size: clamp(2.4rem, 9vw, 5.2rem);
+  padding: 36px var(--pad) 0; opacity: 0.92;
+}
+.foot-tag { text-align: center; color: var(--text-mute); font-size: 0.95rem; padding: 10px var(--pad) 0; }
+.foot-tag b { color: var(--violet-deep); }
 
 /* ---------- Marquee strip ---------- */
 .marquee {
@@ -345,6 +390,7 @@ section { padding: clamp(32px, 5vw, 64px) 0; }
 @media (prefers-reduced-motion: reduce) {
   .reveal-up { opacity: 1; transform: none; transition: none; }
   .marquee-track { animation: none; }
+  .float-chip { animation: none; }
   html { scroll-behavior: auto; }
 }
 
@@ -354,6 +400,8 @@ section { padding: clamp(32px, 5vw, 64px) 0; }
   .hero-display { font-size: clamp(2.9rem, 13.5vw, 4.6rem); }
   .hero-photo-wrap { order: -1; }
   .hero-photo { width: min(200px, 56vw); }
+  .avail-pill { display: none; }
+  .float-chips { display: none; }
   .project-row { grid-template-columns: 44px 1fr; }
   .project-row .row-side { display: none; }
   .grid-2 { grid-template-columns: 1fr; gap: 24px; }
