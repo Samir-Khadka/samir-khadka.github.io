@@ -2005,9 +2005,6 @@ section.tight {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
 }
 
-/* Watch section video (added 2026-11-14 — agent-build video) */
-.watch-video { width: 100%; display: block; border-radius: 12px; }
-
 /* Light mode: Skills button used hardcoded white text (unreadable on ivory) */
 [data-theme="light"] .drawer-toggle-btn {
   background: rgba(26, 18, 9, 0.08);
