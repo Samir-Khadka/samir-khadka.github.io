@@ -1,8 +1,24 @@
-/* ===========================================================
-   Samir Khadka — Portfolio interactions (light theme)
-   =========================================================== */
+// Satisfying motion graphics loop videos
+const backgroundVideos = [
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260525_070034_60e5670b-6bb0-402b-a6c1-c9a8c05ae3a4.mp4",
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260429_115139_0fc6bd3d-3631-4d26-ab9b-28293887dcc9.mp4",
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260428_193507_4286c423-2fd9-4efd-92bd-91a939453fc1.mp4",
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260422_112520_ee819691-f2e8-4c54-bb77-3fb72c84eaa5.mp4",
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260419_065931_e3ca7b53-d32e-4ad5-81de-dc9d6fcfda6d.mp4",
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260417_061226_74f0749c-a22d-42b3-895e-5d6203bc741c.mp4",
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260331_074327_a4d6275d-82d9-4c83-bfbe-f1fb2213c17c.mp4",
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260307_083826_e938b29f-a43a-41ec-a153-3d4730578ab8.mp4",
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260520_133010_cb9c806d-bc9d-47f1-ac4c-b1759134ec8b.mp4",
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260525_052706_d2e390fd-1846-4fe7-a4d8-8d2f1c875358.mp4",
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260511_131941_d136af49-e243-493a-be14-6ff3f24e09e6.mp4",
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260423_161253_c72b1869-400f-45ed-ac0c-52f68c2ed5bd.mp4",
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260503_144509_89e2d612-8af2-45c3-90f4-4831bc60715d.mp4",
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260416_101255_3099d3e4-d0cf-4e59-9666-97fbf521ac71.mp4",
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260418_115655_b4d9cd77-feed-43cd-a198-af78ebdf1f7a.mp4",
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_083109_283f3553-e28f-428b-a723-d639c617eb2b.mp4"
+];
 
-// Skills for the searchable sidebar drawer
+// Complete list of skills with metadata for the searchable sidebar
 const skillsArchive = [
   { name: "React.js", category: "Frontend Web", icon: "fa-react", level: "Advanced" },
   { name: "Node.js", category: "Backend Runtime", icon: "fa-node-js", level: "Intermediate" },
@@ -29,10 +45,33 @@ const skillsArchive = [
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
+  // 0. Light / Dark Theme Toggle
+  const htmlEl = document.documentElement;
+  const savedTheme = localStorage.getItem('portfolioTheme') || 'dark';
+  htmlEl.setAttribute('data-theme', savedTheme);
 
-  // 1. Mobile navigation
-  const toggle = document.getElementById('navToggle');
-  const links = document.getElementById('navLinks');
+  function updateThemeBtn() {
+    document.querySelectorAll('.theme-toggle-btn').forEach(btn => {
+      const isDark = htmlEl.getAttribute('data-theme') !== 'light';
+      btn.querySelector('.theme-icon').textContent = isDark ? '☀️' : '🌙';
+      btn.querySelector('.theme-label').textContent = isDark ? 'Light' : 'Dark';
+      btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    });
+  }
+
+  window.toggleTheme = function() {
+    const current = htmlEl.getAttribute('data-theme');
+    const next = current === 'light' ? 'dark' : 'light';
+    htmlEl.setAttribute('data-theme', next);
+    localStorage.setItem('portfolioTheme', next);
+    updateThemeBtn();
+  };
+
+  updateThemeBtn();
+
+  // 1. Mobile navigation toggler
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('nav.links');
   if (toggle && links) {
     toggle.addEventListener('click', () => {
       toggle.classList.toggle('open');
@@ -44,44 +83,77 @@ document.addEventListener('DOMContentLoaded', () => {
     }));
   }
 
-  // 2. Scroll reveal animations
-  const revealEls = document.querySelectorAll('.reveal-up');
+  // 2. Scroll reveal animations (Intersection Observer)
+  const revealEls = document.querySelectorAll('.reveal-up, .reveal-side');
   if ('IntersectionObserver' in window && revealEls.length) {
     const obs = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+          entry.target.classList.add('is-visible');
+          // Once visible, we can unobserve if we only want it to animate once
           obs.unobserve(entry.target);
         }
       });
-    }, { rootMargin: '0px 0px -40px 0px', threshold: 0.05 });
+    }, { root: null, rootMargin: '0px 0px -40px 0px', threshold: 0.05 });
     revealEls.forEach(el => obs.observe(el));
   } else {
-    revealEls.forEach(el => el.classList.add('visible'));
+    revealEls.forEach(el => el.classList.add('is-visible'));
   }
 
-  // 3. About modal
+  // 3. Floating Background Video Controls
+  const bgVideoElement = document.getElementById('bgVideo');
+  if (bgVideoElement) {
+    let currentVidIndex = localStorage.getItem('bgVideoIndex');
+    
+    // Choose random if none stored, or ensure it's in bounds
+    if (currentVidIndex === null || isNaN(currentVidIndex)) {
+      currentVidIndex = Math.floor(Math.random() * backgroundVideos.length);
+    } else {
+      currentVidIndex = parseInt(currentVidIndex, 10) % backgroundVideos.length;
+    }
+
+    const loadVideo = (index) => {
+      bgVideoElement.style.opacity = '0';
+      setTimeout(() => {
+        bgVideoElement.src = backgroundVideos[index];
+        bgVideoElement.load();
+        bgVideoElement.play().catch(err => console.log("Autoplay blocked:", err));
+        bgVideoElement.style.opacity = '1';
+      }, 300);
+    };
+
+    // Load initial video
+    loadVideo(currentVidIndex);
+
+    // Change Background click handler
+    window.changeBackground = function() {
+      currentVidIndex = (currentVidIndex + 1) % backgroundVideos.length;
+      localStorage.setItem('bgVideoIndex', currentVidIndex);
+      loadVideo(currentVidIndex);
+    };
+  }
+
+  // 4. Floating About Modal Popup
   const modalOverlay = document.getElementById('aboutModal');
   window.toggleInfoModal = function(show) {
     if (!modalOverlay) return;
     if (show) {
-      modalOverlay.classList.add('open');
+      modalOverlay.classList.add('active');
       document.body.style.overflow = 'hidden';
     } else {
-      modalOverlay.classList.remove('open');
+      modalOverlay.classList.remove('active');
       document.body.style.overflow = '';
     }
   };
+
+  // Close modal when clicking outside box
   if (modalOverlay) {
     modalOverlay.addEventListener('click', (e) => {
       if (e.target === modalOverlay) toggleInfoModal(false);
     });
   }
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') { toggleInfoModal(false); toggleSidebar(false); }
-  });
 
-  // 4. Sidebar drawer
+  // 5. Sidebar Drawer for Skills
   const sidebarOverlay = document.getElementById('sidebarOverlay');
   const sidebarDrawer = document.getElementById('sidebarDrawer');
   const allSkillsList = document.getElementById('allSkillsList');
@@ -91,46 +163,69 @@ document.addEventListener('DOMContentLoaded', () => {
   window.toggleSidebar = function(show) {
     if (!sidebarDrawer || !sidebarOverlay) return;
     if (show) {
-      sidebarDrawer.classList.add('open');
-      sidebarOverlay.classList.add('open');
+      sidebarDrawer.classList.add('active');
+      sidebarOverlay.classList.add('active');
       document.body.style.overflow = 'hidden';
-      if (sidebarSearch) { sidebarSearch.value = ''; renderSkills(skillsArchive); sidebarSearch.focus(); }
+      if (sidebarSearch) {
+        sidebarSearch.value = '';
+        sidebarSearch.focus();
+      }
+      renderSkills(skillsArchive);
     } else {
-      sidebarDrawer.classList.remove('open');
-      sidebarOverlay.classList.remove('open');
+      sidebarDrawer.classList.remove('active');
+      sidebarOverlay.classList.remove('active');
       document.body.style.overflow = '';
     }
   };
+
+  // Close sidebar clicking outside
   if (sidebarOverlay) {
     sidebarOverlay.addEventListener('click', () => toggleSidebar(false));
   }
+
+  // Render skills in the drawer list
   function renderSkills(skills) {
     if (!allSkillsList) return;
     allSkillsList.innerHTML = '';
+    
     if (skills.length === 0) {
-      if (sidebarNoResults) sidebarNoResults.style.display = 'block';
+      if (sidebarNoResults) sidebarNoResults.style.display = 'flex';
       return;
     }
+
     if (sidebarNoResults) sidebarNoResults.style.display = 'none';
+
     skills.forEach((skill) => {
-      allSkillsList.insertAdjacentHTML('beforeend',
-        '<div class="skill-item"><strong><i class="fab ' + (skill.icon || 'fa-code') +
-        '" style="color:var(--violet);margin-right:8px;"></i>' + skill.name +
-        '</strong><span>' + skill.category + ' &middot; ' + skill.level + '</span></div>');
-    });
-  }
-  if (sidebarSearch) {
-    sidebarSearch.addEventListener('input', (e) => {
-      const term = e.target.value.toLowerCase();
-      renderSkills(skillsArchive.filter(skill =>
-        skill.name.toLowerCase().includes(term) ||
-        skill.category.toLowerCase().includes(term) ||
-        skill.level.toLowerCase().includes(term)
-      ));
+      const itemHTML = `
+        <div class="sidebar-list-item">
+          <div class="sidebar-list-icon">
+            <i class="fab ${skill.icon || 'fa-code'}"></i>
+          </div>
+          <div class="sidebar-list-info">
+            <h4 class="sidebar-list-title">${skill.name}</h4>
+            <p class="sidebar-list-subtitle">${skill.category}</p>
+          </div>
+          <span class="sidebar-list-tag">${skill.level}</span>
+        </div>
+      `;
+      allSkillsList.insertAdjacentHTML('beforeend', itemHTML);
     });
   }
 
-  // 5. Vedic Numerology Calculator
+  // Filter skills on search input
+  if (sidebarSearch) {
+    sidebarSearch.addEventListener('input', (e) => {
+      const term = e.target.value.toLowerCase();
+      const filtered = skillsArchive.filter(skill => 
+        skill.name.toLowerCase().includes(term) || 
+        skill.category.toLowerCase().includes(term) ||
+        skill.level.toLowerCase().includes(term)
+      );
+      renderSkills(filtered);
+    });
+  }
+
+  // 6. Professional Vedic Numerology Calculator
   const numForm = document.getElementById('numerology-form');
   if (numForm) {
     const dobInput = document.getElementById('dob-input');
@@ -143,7 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return n;
     };
 
-const vedicData = {
+    const vedicData = {
       1: {
         planet: 'Sun (Surya)',
         nature: 'The King / Leader',
@@ -258,62 +353,112 @@ const vedicData = {
       e.preventDefault();
       const dobVal = dobInput.value;
       if (!dobVal) return;
+      
       const dobParts = dobVal.split('-');
       if (dobParts.length !== 3) return;
-
-      const mulank = reduceNumber(parseInt(dobParts[2], 10));
-      const bhagyank = reduceNumber(
-        reduceNumber(parseInt(dobParts[1], 10)) +
-        reduceNumber(parseInt(dobParts[2], 10)) +
-        reduceNumber(parseInt(dobParts[0], 10))
-      );
+      
+      const yearStr = dobParts[0];
+      const monthStr = dobParts[1];
+      const dayStr = dobParts[2];
+      
+      const m = reduceNumber(parseInt(monthStr, 10));
+      const d = reduceNumber(parseInt(dayStr, 10));
+      const y = reduceNumber(parseInt(yearStr, 10));
+      
+      // Calculate Mulank (Root / Day)
+      const mulank = reduceNumber(parseInt(dayStr, 10));
+      
+      // Calculate Bhagyank (Destiny / Full DOB)
+      const bhagyank = reduceNumber(m + d + y);
 
       const mData = vedicData[mulank];
       const bData = vedicData[bhagyank];
 
-      const traitRow = (d) => `
-        <div class="num-traits">
-          <div class="num-trait-group"><h6>Friendly Numbers</h6><div><i class="fas fa-handshake"></i> ${d.friendly}</div></div>
-          <div class="num-trait-group"><h6>Enemy Numbers</h6><div><i class="fas fa-bolt"></i> ${d.enemy}</div></div>
-          <div class="num-trait-group"><h6>Lucky Days</h6><div><i class="far fa-calendar-check"></i> ${d.days}</div></div>
-          <div class="num-trait-group"><h6>Lucky Colors</h6><div><i class="fas fa-palette"></i> ${d.colors}</div></div>
-        </div>`;
-
       resultBox.innerHTML = `
-        <div class="num-core-grid">
-          <div class="num-core-card">
-            <div class="digit">${mulank}</div>
-            <h5>Mulank (Root)</h5>
-            <p>Who you are natively.</p>
+        <div class="num-report-header">
+          <h3>Your Complete Vedic Numerology Report</h3>
+        </div>
+        
+        <div class="num-core-grid" style="grid-template-columns: 1fr 1fr; margin-bottom: 32px;">
+          <div class="num-core-card" style="padding: 32px 20px;">
+            <div class="digit" style="width: 80px; height: 80px; font-size: 3rem;">${mulank}</div>
+            <h5 style="font-size: 0.9rem;">Mulank (Root)</h5>
+            <p style="font-size: 0.8rem; margin-top: 8px; color: var(--text-muted);">Who you are natively.</p>
           </div>
-          <div class="num-core-card">
-            <div class="digit">${bhagyank}</div>
-            <h5>Bhagyank (Destiny)</h5>
-            <p>Your path and karma.</p>
+          <div class="num-core-card" style="padding: 32px 20px;">
+            <div class="digit" style="width: 80px; height: 80px; font-size: 3rem;">${bhagyank}</div>
+            <h5 style="font-size: 0.9rem;">Bhagyank (Destiny)</h5>
+            <p style="font-size: 0.8rem; margin-top: 8px; color: var(--text-muted);">Your path and karma.</p>
           </div>
         </div>
+        
         <div class="num-section-title">Deep Analysis: Mulank ${mulank}</div>
-        <div class="num-details">
+        <div class="num-details" style="margin-bottom: 32px;">
           <h4>${mData.planet} — ${mData.nature}</h4>
-          <p><strong>Characteristics.</strong> ${mData.traits}</p>
-          <p><strong>Career &amp; Finance.</strong> ${mData.career}</p>
-          <p><strong>Love &amp; Relationships.</strong> ${mData.love}</p>
-          ${traitRow(mData)}
-          <div class="num-traits" style="margin-top:16px;">
-            <div class="num-trait-group"><h6>Vedic Remedy &amp; Advice</h6><div><i class="fas fa-om"></i> ${mData.remedy}</div></div>
+          <div style="margin-bottom: 20px;">
+            <h6 style="color: var(--nav-hover); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; margin-bottom: 4px;">Characteristics</h6>
+            <p>${mData.traits}</p>
+          </div>
+          <div style="margin-bottom: 20px;">
+            <h6 style="color: var(--nav-hover); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; margin-bottom: 4px;">Career & Finance</h6>
+            <p>${mData.career}</p>
+          </div>
+          <div style="margin-bottom: 20px;">
+            <h6 style="color: var(--nav-hover); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; margin-bottom: 4px;">Love & Relationships</h6>
+            <p>${mData.love}</p>
+          </div>
+          
+          <div class="num-traits">
+            <div class="num-trait-group">
+              <h6>Friendly Numbers</h6>
+              <div><i class="fas fa-handshake"></i> ${mData.friendly}</div>
+            </div>
+            <div class="num-trait-group">
+              <h6>Enemy Numbers</h6>
+              <div><i class="fas fa-bolt"></i> ${mData.enemy}</div>
+            </div>
+            <div class="num-trait-group">
+              <h6>Lucky Days</h6>
+              <div><i class="far fa-calendar-check"></i> ${mData.days}</div>
+            </div>
+            <div class="num-trait-group">
+              <h6>Lucky Colors</h6>
+              <div><i class="fas fa-palette"></i> ${mData.colors}</div>
+            </div>
+          </div>
+          
+          <div class="num-traits" style="margin-top: 20px; grid-template-columns: 1fr;">
+            <div class="num-trait-group">
+              <h6>Vedic Remedy & Advice</h6>
+              <div><i class="fas fa-om"></i> ${mData.remedy}</div>
+            </div>
           </div>
         </div>
+
         <div class="num-section-title">Deep Analysis: Bhagyank ${bhagyank}</div>
         <div class="num-details">
           <h4>${bData.planet} — ${bData.nature}</h4>
-          <p><strong>Destiny &amp; Karma.</strong> ${bData.traits}</p>
-          <p><strong>Destined Career Path.</strong> ${bData.career}</p>
-          <p><strong>Destined Love Path.</strong> ${bData.love}</p>
-          ${traitRow(bData)}
-          <div class="num-traits" style="margin-top:16px;">
-            <div class="num-trait-group"><h6>Vedic Remedy &amp; Advice for Destiny</h6><div><i class="fas fa-om"></i> ${bData.remedy}</div></div>
+          <div style="margin-bottom: 20px;">
+            <h6 style="color: var(--nav-hover); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; margin-bottom: 4px;">Destiny & Karma</h6>
+            <p>${bData.traits}</p>
           </div>
-        </div>`;
+          <div style="margin-bottom: 20px;">
+            <h6 style="color: var(--nav-hover); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; margin-bottom: 4px;">Destined Career Path</h6>
+            <p>${bData.career}</p>
+          </div>
+          <div style="margin-bottom: 20px;">
+            <h6 style="color: var(--nav-hover); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; margin-bottom: 4px;">Destined Love Path</h6>
+            <p>${bData.love}</p>
+          </div>
+          <div class="num-traits" style="margin-top: 20px; grid-template-columns: 1fr;">
+            <div class="num-trait-group">
+              <h6>Vedic Remedy & Advice for Destiny</h6>
+              <div><i class="fas fa-om"></i> ${bData.remedy}</div>
+            </div>
+          </div>
+        </div>
+      `;
+      resultBox.classList.add('active');
     });
   }
 });

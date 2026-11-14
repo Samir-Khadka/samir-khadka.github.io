@@ -1,29 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Samir Khadka — Full-Stack Developer</title>
   <meta name="description" content="Samir Khadka — full-stack software developer from Nepal. React, Node.js, Python, DevOps & Cloud. Recent BSc CSIT graduate building real, shipped software.">
-  <link rel="canonical" href="https://samir-khadka.com.np/">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta name="theme-color" content="#FAF6ED">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Samir Khadka">
-  <meta property="og:title" content="Samir Khadka — Full-Stack Developer">
-  <meta property="og:description" content="Full-stack developer from Urlabari, Nepal. React, Node.js, Python, DevOps & Cloud. 17 projects shipped live.">
-  <meta property="og:url" content="https://samir-khadka.com.np/">
-  <meta property="og:image" content="https://samir-khadka.com.np/assets/profile.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Samir Khadka — Full-Stack Developer">
-  <meta name="twitter:description" content="Full-stack developer from Urlabari, Nepal. React, Node.js, Python, DevOps & Cloud. 17 projects shipped live.">
-  <meta name="twitter:image" content="https://samir-khadka.com.np/assets/profile.jpg">
+  <link rel="canonical" href="https://samir-khadka.com.np/"> <link rel="icon" type="image/svg+xml" href="/favicon.svg"> <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"> <link rel="apple-touch-icon" href="/apple-touch-icon.png"> <meta name="theme-color" content="#0f172a"> <meta property="og:type" content="website"> <meta property="og:site_name" content="Samir Khadka"> <meta property="og:title" content="Samir Khadka — Full-Stack Developer"> <meta property="og:description" content="Full-stack developer from Urlabari, Nepal. React, Node.js, Python, DevOps & Cloud. 17 projects shipped live."> <meta property="og:url" content="https://samir-khadka.com.np/"> <meta property="og:image" content="https://samir-khadka.com.np/assets/profile.jpg"> <meta name="twitter:card" content="summary_large_image"> <meta name="twitter:title" content="Samir Khadka — Full-Stack Developer"> <meta name="twitter:description" content="Full-stack developer from Urlabari, Nepal. React, Node.js, Python, DevOps & Cloud. 17 projects shipped live."> <meta name="twitter:image" content="https://samir-khadka.com.np/assets/profile.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=4">
+  <script>!function(){var t=localStorage.getItem('portfolioTheme');document.documentElement.setAttribute('data-theme',t||'dark');}();</script>
 </head>
 <body>
+
+  <!-- Screen background fixed video container -->
+  <div class="bg-container">
+    <video id="bgVideo" class="bg-video" autoplay loop muted playsinline></video>
+  </div>
+  <div class="video-overlay"></div>
 
   <!-- Header Navigation -->
   <header class="site-head">
@@ -32,7 +27,7 @@
         <img src="assets/profile.jpg" alt="Samir Khadka Profile Photo" class="brand-avatar">
         Samir Khadka
       </a>
-      <nav class="links" id="navLinks">
+      <nav class="links">
         <a href="index.html" class="active">Home</a>
         <a href="projects.html">Projects</a>
         <a href="interests.html">Other Interests</a>
@@ -40,53 +35,36 @@
         <a href="contact.html">Contact</a>
       </nav>
       <div class="header-actions">
-        <span class="avail-pill"><span class="avail-dot"></span>Open to opportunities</span>
+        <button onclick="toggleTheme()" class="theme-toggle-btn" id="themeBtn" aria-label="Switch theme">
+          <span class="theme-icon">☀️</span><span class="theme-label">Light</span>
+        </button>
         <button onclick="toggleSidebar(true)" class="drawer-toggle-btn" aria-label="Open Skills Drawer">
           <i class="fas fa-layer-group"></i> <span class="drawer-label">Skills</span>
         </button>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <button class="nav-toggle" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- Main Hero Section -->
   <section class="hero reveal-up">
     <div class="hero-inner">
-      <div class="eyebrow">Full-Stack Developer — React · Node.js · Python</div>
-      <h1 class="hero-display">
-        <span class="line">Building</span>
-        <span class="line"><span class="accent">real software,</span></span>
-        <span class="line"><span class="gold-line">shipped live.</span></span>
-      </h1>
-      <div class="hero-sub">
-        <div>
-          <p class="lead">I'm Samir Khadka — a full-stack developer from Urlabari, Nepal. I build complete products end to end — from data model to deployed interface — and keep them running. Recent BSc CSIT graduate, ready to bring fresh energy to a team that loves to build.</p>
-          <div class="hero-meta">
-            <div><strong>BSc CSIT</strong><span>2022 — 2026</span></div>
-            <div><strong>17</strong><span>Projects shipped</span></div>
-            <div><strong>10+</strong><span>Students mentored</span></div>
-            <div><strong>U-16</strong><span>World Youth Chess Olympiad</span></div>
-          </div>
-          <div class="btn-row">
-            <a href="projects.html" class="btn solid">View projects <i class="fas fa-arrow-right"></i></a>
-            <a href="contact.html" class="btn">Get in touch</a>
-          </div>
-        </div>
-        <div class="hero-photo-wrap">
-          <img src="assets/profile.jpg" alt="Samir Khadka" class="hero-photo">
-          <div class="hero-photo-badge">BSc CSIT · Class of 2026</div>
-        </div>
+      <div class="eyebrow">Urlabari, Nepal</div>
+      <h1>Building software <span class="heading-cinematic">and</span><br>designing the page around it.</h1>
+      <p class="lead">Full stack developer and graphic designer with a habit of thinking several moves ahead — on the board and in the codebase. Recent CS graduate, ready to bring fresh energy to a team that loves to build.</p>
+
+      <div class="hero-meta">
+        <div><strong>BSc CSIT</strong>2022 — 2026</div>
+        <div><strong>17</strong>Projects shipped</div>
+        <div><strong>10+</strong>students mentored</div>
+        <div><strong>U-16</strong>World Youth Chess Olympiad</div>
       </div>
-      <div class="float-chips" aria-hidden="true">
-        <span class="float-chip"><i style="background:#61DAFB"></i>React</span>
-        <span class="float-chip"><i style="background:#3776AB"></i>Python</span>
-        <span class="float-chip"><i style="background:#2496ED"></i>Docker</span>
-        <span class="float-chip"><i style="background:#326CE5"></i>Kubernetes</span>
-      </div>
-      <div class="marquee" aria-hidden="true">
-        <div class="marquee-track"><span>React <b>✦</b></span><span>Node.js <b>✦</b></span><span>Python <b>✦</b></span><span>TypeScript <b>✦</b></span><span>FastAPI <b>✦</b></span><span>Docker <b>✦</b></span><span>Kubernetes <b>✦</b></span><span>PostgreSQL <b>✦</b></span><span>React <b>✦</b></span><span>Node.js <b>✦</b></span><span>Python <b>✦</b></span><span>TypeScript <b>✦</b></span><span>FastAPI <b>✦</b></span><span>Docker <b>✦</b></span><span>Kubernetes <b>✦</b></span><span>PostgreSQL <b>✦</b></span></div>
+
+      <div class="btn-row">
+        <a href="projects.html" class="btn solid">View projects <i class="fas fa-arrow-right"></i></a>
+        <a href="contact.html" class="btn">Get in touch</a>
       </div>
     </div>
   </section>
@@ -94,9 +72,9 @@
   <!-- Skills & Tools -->
   <section class="reveal-up">
     <div class="section-inner">
-      <div class="section-head-big">
-        <span class="sec-num">01 — STACK</span>
-        <h2>Skills &amp; <span class="accent">tools</span></h2>
+      <div class="section-head">
+        <h2>Skills &amp; tools</h2>
+        <span class="eyebrow">Stack</span>
       </div>
       <div class="skill-grid">
         <div class="skill-cell">Python</div>
@@ -128,11 +106,11 @@
   <!-- Training & Achievements -->
   <section class="reveal-up">
     <div class="section-inner">
-      <div class="section-head-big">
-        <span class="sec-num">02 — RECORD</span>
-        <h2>Training &amp; <span class="accent">achievements</span></h2>
+      <div class="section-head">
+        <h2>Training &amp; achievements</h2>
+        <span class="eyebrow">Record</span>
       </div>
-      <div class="card">
+      <div class="glass-card">
         <div class="timeline">
           <div class="tl-item">
             <span class="date">Aug 2025 — Present</span>
@@ -167,44 +145,28 @@
   <!-- Watch the build -->
   <section class="reveal-up">
     <div class="section-inner">
-      <div class="section-head-big">
-        <span class="sec-num">03 — WATCH</span>
-        <h2>Watch AI agents <span class="accent">build this site</span></h2>
+      <div class="section-head">
+        <h2>Watch AI agents build this site</h2>
+        <span class="eyebrow">Watch</span>
       </div>
       <p class="lead">Sixteen AI agents, one website, built live in the browser — every layer, every pixel, in 38 seconds.</p>
-      <div class="video-frame">
-        <video controls autoplay muted loop playsinline preload="metadata" poster="assets/agents-poster.jpg">
+      <div class="glass-card" style="padding: 16px;">
+        <video class="watch-video" controls autoplay muted loop playsinline preload="metadata" poster="assets/agents-poster.jpg">
           <source src="assets/agents-16x9.mp4" type="video/mp4">
         </video>
       </div>
-      <div class="btn-row">
+      <div class="btn-row" style="margin-top: 24px;">
         <a href="watch/" class="btn solid">Watch it live <i class="fas fa-arrow-right"></i></a>
         <a href="assets/agents-16x9.mp4" class="btn" download>Download the video</a>
       </div>
     </div>
   </section>
 
-  <!-- Closing CTA -->
-  <section class="reveal-up">
-    <div class="section-inner">
-      <div class="cta-band">
-        <span class="sec-num">04 — CONTACT</span>
-        <h2>Have an idea?<br><span class="accent">Let's build something real.</span></h2>
-        <p class="lead">A product, a tool, a system that needs to exist — if you want it built properly, end to end, let's talk.</p>
-        <div class="btn-row">
-          <a href="contact.html" class="btn solid">Get in touch <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Footer -->
   <footer class="site-foot">
-    <div class="foot-giant">SAMIR KHADKA</div>
-    <div class="foot-tag">Building <b>real software</b>, shipped live.</div>
     <div class="foot-inner">
       <span>© 2026 Samir Khadka.</span>
-      <div>
+      <div style="display:flex;gap:20px;">
         <a href="https://linkedin.com/in/khadka-samir" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
         <a href="https://github.com/Samir-Khadka" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
         <a href="mailto:samirshirjan890@gmail.com"><i class="fas fa-envelope"></i> Email</a>
@@ -212,12 +174,16 @@
     </div>
   </footer>
 
-  <!-- Floating info button -->
+  <!-- Floating bottom interactive buttons -->
   <button onclick="toggleInfoModal(true)" class="info-btn" aria-label="About Samir Khadka">
     <i class="fas fa-info"></i>
   </button>
+  
+  <button id="bg-toggle" class="bg-toggle" onclick="toggleBgVideo()" aria-label="Pause background video" aria-pressed="false">⏸</button><button onclick="changeBackground()" class="change-bg-btn" aria-label="Change Background Video">
+    <i class="fas fa-random"></i> <span>Change BG</span>
+  </button>
 
-  <!-- About Modal -->
+  <!-- Centered Popup Bio Modal -->
   <div id="aboutModal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="About Samir Khadka">
     <div class="modal-box">
       <button onclick="toggleInfoModal(false)" class="modal-close-btn" aria-label="Close modal">
@@ -227,17 +193,17 @@
         <img src="assets/profile.jpg" alt="Samir Khadka Profile Photo" class="modal-profile-img">
         <div class="modal-profile-title">
           <h2>Samir Khadka</h2>
-          <p>Full-Stack Developer</p>
+          <p>Developer &amp; Designer</p>
         </div>
       </div>
       <div class="modal-bio">
-        <p>Samir Khadka is a full-stack software developer and competitive chess player from Urlabari, Nepal.</p>
-        <p>Recent BSc CSIT graduate (2022 — 2026) who has represented Nepal at the U-16 World Youth Chess Olympiad. Builds complete products end to end — React, Node.js, Python, with solid DevOps/Cloud deployment automation.</p>
+        <p>Samir Khadka is a full stack software developer, graphic designer, and competitive chess player from Urlabari, Nepal.</p>
+        <p>Recent BSc CSIT graduate (2022 — 2026) who has represented Nepal at the U-16 World Youth Chess Olympiad. Passionate about building premium visual web interfaces and solid DevOps/Cloud deployment automation.</p>
       </div>
     </div>
   </div>
 
-  <!-- Sidebar Drawer -->
+  <!-- Sidebar Drawer Overlay and Drawer -->
   <div id="sidebarOverlay" class="sidebar-overlay"></div>
   <div id="sidebarDrawer" class="sidebar-drawer" role="dialog" aria-modal="true" aria-label="Skills Archive">
     <div class="sidebar-header">
@@ -258,7 +224,9 @@
         <input type="text" id="sidebarSearch" placeholder="Search skills, category, level..." class="sidebar-search-input">
       </div>
     </div>
-    <div id="allSkillsList" class="sidebar-content"></div>
+    <div id="allSkillsList" class="sidebar-content">
+      <!-- Rendered dynamically via JavaScript -->
+    </div>
     <div id="sidebarNoResults" class="sidebar-no-results">
       <i class="fas fa-box-open"></i>
       <h4>No skills found</h4>
@@ -266,7 +234,7 @@
     </div>
   </div>
 
-  <script src="script.js?v=5"></script>
-  <script src="a11y-dialogs.js"></script>
+  <script src="script.js?v=4"></script><script>window.toggleBgVideo=function(){var v=document.getElementById('bgVideo'),b=document.getElementById('bg-toggle');if(v.paused){v.play();b.textContent='⏸'}else{v.pause();b.textContent='▶'}};</script>
+<script src="a11y-dialogs.js"></script> 
 </body>
 </html>
