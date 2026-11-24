@@ -1014,3 +1014,12 @@ a.row:hover .go { transform: translate(3px, -3px); color: var(--gold); }
 }
 
 .bottom-nav button.has-current { color: var(--gold); }
+
+/* Readability over pale background videos: backed headings, more solid cards */
+#experience .section-head, #achievements .section-head, #interests .section-head {
+  background: rgba(10, 10, 14, 0.72); border: 1px solid var(--glass-border); border-radius: 22px;
+  padding: 22px 26px; -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+}
+#experience .glass, #achievements .glass, #interests .glass { background: rgba(14, 14, 18, 0.88); }
+html[data-theme="light"] #experience .section-head, html[data-theme="light"] #achievements .section-head, html[data-theme="light"] #interests .section-head { background: rgba(255, 255, 255, 0.82); }
+html[data-theme="light"] #experience .glass, html[data-theme="light"] #achievements .glass, html[data-theme="light"] #interests .glass { background: rgba(255, 255, 255, 0.92); }
