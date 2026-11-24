@@ -18,214 +18,172 @@ const backgroundVideos = [
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_083109_283f3553-e28f-428b-a723-d639c617eb2b.mp4"
 ];
 
-// Complete list of skills with metadata for the searchable sidebar
-const skillsArchive = [
-  { name: "React.js", category: "Frontend Web", icon: "fa-react", level: "Advanced" },
-  { name: "Node.js", category: "Backend Runtime", icon: "fa-node-js", level: "Intermediate" },
-  { name: "Express.js", category: "Backend Framework", icon: "fa-server", level: "Advanced" },
-  { name: "FastAPI", category: "Python Framework", icon: "fa-bolt", level: "Advanced" },
-  { name: "JavaScript", category: "Programming Language", icon: "fa-js-square", level: "Expert" },
-  { name: "TypeScript", category: "Programming Language", icon: "fa-code", level: "Intermediate" },
-  { name: "Python", category: "Programming Language", icon: "fa-python", level: "Advanced" },
-  { name: "C++", category: "Programming Language", icon: "fa-code", level: "Intermediate" },
-  { name: "Docker", category: "DevOps / Containers", icon: "fa-docker", level: "Intermediate" },
-  { name: "Kubernetes", category: "DevOps / Orchestration", icon: "fa-cubes", level: "Intermediate" },
-  { name: "AWS", category: "Cloud Infrastructure", icon: "fa-aws", level: "Intermediate" },
-  { name: "Terraform", category: "Infrastructure as Code", icon: "fa-network-wired", level: "Intermediate" },
-  { name: "Git & GitHub", category: "Version Control", icon: "fa-git-alt", level: "Advanced" },
-  { name: "Linux", category: "Operating System", icon: "fa-linux", level: "Advanced" },
-  { name: "Jenkins", category: "CI/CD Automations", icon: "fa-robot", level: "Intermediate" },
-  { name: "SQL & Databases", category: "Data Storage", icon: "fa-database", level: "Advanced" },
-  { name: "Tailwind CSS", category: "Styling Framework", icon: "fa-css3-alt", level: "Advanced" },
-  { name: "Vite", category: "Frontend Bundler", icon: "fa-bolt", level: "Advanced" },
-  { name: "WebSocket", category: "Real-time Protocols", icon: "fa-exchange-alt", level: "Intermediate" },
-  { name: "REST APIs", category: "Web Standards", icon: "fa-cloud", level: "Advanced" },
-  { name: "Django", category: "Python Framework", icon: "fa-terminal", level: "Intermediate" },
-  { name: "Flask", category: "Python Microframework", icon: "fa-feather", level: "Intermediate" }
-];
+// ---------------------------------------------------------------
+// Single-page behaviour: theme, background video, pill navigation
+// ---------------------------------------------------------------
+document.documentElement.classList.add('js');
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 0. Light / Dark Theme Toggle
-  const htmlEl = document.documentElement;
-  const savedTheme = localStorage.getItem('portfolioTheme') || 'dark';
-  htmlEl.setAttribute('data-theme', savedTheme);
+  const root = document.documentElement;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  function updateThemeBtn() {
-    document.querySelectorAll('.theme-toggle-btn').forEach(btn => {
-      const isDark = htmlEl.getAttribute('data-theme') !== 'light';
-      btn.querySelector('.theme-icon').textContent = isDark ? '☀️' : '🌙';
-      btn.querySelector('.theme-label').textContent = isDark ? 'Light' : 'Dark';
-      btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
-    });
-  }
-
-  window.toggleTheme = function() {
-    const current = htmlEl.getAttribute('data-theme');
-    const next = current === 'light' ? 'dark' : 'light';
-    htmlEl.setAttribute('data-theme', next);
-    localStorage.setItem('portfolioTheme', next);
-    updateThemeBtn();
+  // 1. Theme toggle (dark is the default; the choice is remembered)
+  const themeBtn = document.getElementById('themeBtn');
+  const paintThemeBtn = () => {
+    if (!themeBtn) return;
+    const dark = root.getAttribute('data-theme') !== 'light';
+    themeBtn.innerHTML = dark ? '<i class="fas fa-sun" aria-hidden="true"></i>' : '<i class="fas fa-moon" aria-hidden="true"></i>';
+    themeBtn.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+    themeBtn.setAttribute('aria-pressed', String(!dark));
   };
-
-  updateThemeBtn();
-
-  // 1. Mobile navigation toggler
-  const toggle = document.querySelector('.nav-toggle');
-  const links = document.querySelector('nav.links');
-  if (toggle && links) {
-    toggle.addEventListener('click', () => {
-      toggle.classList.toggle('open');
-      links.classList.toggle('open');
+  paintThemeBtn();
+  if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('portfolioTheme', next); } catch (e) { /* storage blocked */ }
+      paintThemeBtn();
     });
-    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      toggle.classList.remove('open');
-      links.classList.remove('open');
-    }));
   }
 
-  // 2. Scroll reveal animations (Intersection Observer)
-  const revealEls = document.querySelectorAll('.reveal-up, .reveal-side');
-  if ('IntersectionObserver' in window && revealEls.length) {
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          // Once visible, we can unobserve if we only want it to animate once
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { root: null, rootMargin: '0px 0px -40px 0px', threshold: 0.05 });
-    revealEls.forEach(el => obs.observe(el));
-  } else {
-    revealEls.forEach(el => el.classList.add('is-visible'));
-  }
+  // 2. Background video: remembered pick, change, pause
+  const video = document.getElementById('bgVideo');
+  const bgToggle = document.getElementById('bgToggle');
+  const bgChange = document.getElementById('bgChange');
+  if (video && !reduceMotion) {
+    let index = null;
+    try { index = localStorage.getItem('bgVideoIndex'); } catch (e) { index = null; }
+    index = (index === null || isNaN(index))
+      ? Math.floor(Math.random() * backgroundVideos.length)
+      : parseInt(index, 10) % backgroundVideos.length;
 
-  // 3. Floating Background Video Controls
-  const bgVideoElement = document.getElementById('bgVideo');
-  if (bgVideoElement) {
-    let currentVidIndex = localStorage.getItem('bgVideoIndex');
-    
-    // Choose random if none stored, or ensure it's in bounds
-    if (currentVidIndex === null || isNaN(currentVidIndex)) {
-      currentVidIndex = Math.floor(Math.random() * backgroundVideos.length);
-    } else {
-      currentVidIndex = parseInt(currentVidIndex, 10) % backgroundVideos.length;
-    }
-
-    const loadVideo = (index) => {
-      bgVideoElement.style.opacity = '0';
+    const load = (i) => {
+      video.style.opacity = '0';
       setTimeout(() => {
-        bgVideoElement.src = backgroundVideos[index];
-        bgVideoElement.load();
-        bgVideoElement.play().catch(err => console.log("Autoplay blocked:", err));
-        bgVideoElement.style.opacity = '1';
+        video.src = backgroundVideos[i];
+        video.load();
+        const p = video.play();
+        if (p && p.catch) p.catch(() => {});
+        video.style.opacity = '1';
       }, 300);
     };
+    load(index);
 
-    // Load initial video
-    loadVideo(currentVidIndex);
-
-    // Change Background click handler
-    window.changeBackground = function() {
-      currentVidIndex = (currentVidIndex + 1) % backgroundVideos.length;
-      localStorage.setItem('bgVideoIndex', currentVidIndex);
-      loadVideo(currentVidIndex);
+    if (bgChange) {
+      bgChange.addEventListener('click', () => {
+        index = (index + 1) % backgroundVideos.length;
+        try { localStorage.setItem('bgVideoIndex', index); } catch (e) { /* storage blocked */ }
+        load(index);
+        if (bgToggle) paintToggle(false);
+      });
+    }
+    const paintToggle = (paused) => {
+      bgToggle.innerHTML = paused ? '<i class="fas fa-play" aria-hidden="true"></i>' : '<i class="fas fa-pause" aria-hidden="true"></i>';
+      bgToggle.setAttribute('aria-label', paused ? 'Play background video' : 'Pause background video');
+      bgToggle.setAttribute('aria-pressed', String(paused));
     };
+    if (bgToggle) {
+      bgToggle.addEventListener('click', () => {
+        if (video.paused) { const p = video.play(); if (p && p.catch) p.catch(() => {}); paintToggle(false); }
+        else { video.pause(); paintToggle(true); }
+      });
+    }
+  } else {
+    if (bgToggle) bgToggle.hidden = true;
+    if (bgChange) bgChange.hidden = true;
   }
 
-  // 4. Floating About Modal Popup
-  const modalOverlay = document.getElementById('aboutModal');
-  window.toggleInfoModal = function(show) {
-    if (!modalOverlay) return;
-    if (show) {
-      modalOverlay.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    } else {
-      modalOverlay.classList.remove('active');
-      document.body.style.overflow = '';
-    }
+  // 3. Pill navigation: scroll-spy + sliding highlight
+  const topNav = document.getElementById('topNav');
+  const bottomNav = document.getElementById('bottomNav');
+  const moreSheet = document.getElementById('moreSheet');
+  const moreBtn = document.getElementById('moreBtn');
+  const navLinks = Array.from(document.querySelectorAll('[data-nav]'));
+  const sections = Array.from(document.querySelectorAll('main section[id]'));
+  let current = '';
+
+  const moveGlider = (nav, target) => {
+    if (!nav) return;
+    const glider = nav.querySelector('.pill-glider');
+    if (!glider) return;
+    if (!target || target.offsetParent === null) { glider.classList.remove('ready'); return; }
+    glider.style.width = target.offsetWidth + 'px';
+    glider.style.transform = 'translateX(' + (target.offsetLeft - 6) + 'px)';
+    glider.classList.add('ready');
   };
 
-  // Close modal when clicking outside box
-  if (modalOverlay) {
-    modalOverlay.addEventListener('click', (e) => {
-      if (e.target === modalOverlay) toggleInfoModal(false);
+  const paintNav = () => {
+    navLinks.forEach((a) => {
+      if (a.getAttribute('href') === '#' + current) a.setAttribute('aria-current', 'true');
+      else a.removeAttribute('aria-current');
     });
-  }
-
-  // 5. Sidebar Drawer for Skills
-  const sidebarOverlay = document.getElementById('sidebarOverlay');
-  const sidebarDrawer = document.getElementById('sidebarDrawer');
-  const allSkillsList = document.getElementById('allSkillsList');
-  const sidebarSearch = document.getElementById('sidebarSearch');
-  const sidebarNoResults = document.getElementById('sidebarNoResults');
-
-  window.toggleSidebar = function(show) {
-    if (!sidebarDrawer || !sidebarOverlay) return;
-    if (show) {
-      sidebarDrawer.classList.add('active');
-      sidebarOverlay.classList.add('active');
-      document.body.style.overflow = 'hidden';
-      if (sidebarSearch) {
-        sidebarSearch.value = '';
-        sidebarSearch.focus();
-      }
-      renderSkills(skillsArchive);
-    } else {
-      sidebarDrawer.classList.remove('active');
-      sidebarOverlay.classList.remove('active');
-      document.body.style.overflow = '';
-    }
+    const inMore = moreSheet && !!moreSheet.querySelector('a[aria-current="true"]');
+    if (moreBtn) moreBtn.classList.toggle('has-current', inMore);
+    // Wait a frame so label show/hide has settled before measuring.
+    requestAnimationFrame(() => {
+      moveGlider(topNav, topNav && topNav.querySelector('a[aria-current="true"]'));
+      moveGlider(bottomNav, bottomNav && (bottomNav.querySelector('a[aria-current="true"]') || (inMore ? moreBtn : null)));
+    });
   };
 
-  // Close sidebar clicking outside
-  if (sidebarOverlay) {
-    sidebarOverlay.addEventListener('click', () => toggleSidebar(false));
-  }
+  const setCurrent = (id) => { if (id && id !== current) { current = id; paintNav(); } };
 
-  // Render skills in the drawer list
-  function renderSkills(skills) {
-    if (!allSkillsList) return;
-    allSkillsList.innerHTML = '';
-    
-    if (skills.length === 0) {
-      if (sidebarNoResults) sidebarNoResults.style.display = 'flex';
-      return;
+  const spy = () => {
+    const mark = window.scrollY + window.innerHeight * 0.38;
+    let found = sections.length ? sections[0].id : '';
+    sections.forEach((s) => { if (s.offsetTop <= mark) found = s.id; });
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4 && sections.length) {
+      found = sections[sections.length - 1].id;
     }
+    setCurrent(found);
+  };
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => { spy(); ticking = false; });
+  }, { passive: true });
+  window.addEventListener('resize', () => { spy(); paintNav(); });
+  window.addEventListener('load', () => { spy(); paintNav(); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(paintNav).catch(() => {});
+  spy();
 
-    if (sidebarNoResults) sidebarNoResults.style.display = 'none';
-
-    skills.forEach((skill) => {
-      const itemHTML = `
-        <div class="sidebar-list-item">
-          <div class="sidebar-list-icon">
-            <i class="fab ${skill.icon || 'fa-code'}"></i>
-          </div>
-          <div class="sidebar-list-info">
-            <h4 class="sidebar-list-title">${skill.name}</h4>
-            <p class="sidebar-list-subtitle">${skill.category}</p>
-          </div>
-          <span class="sidebar-list-tag">${skill.level}</span>
-        </div>
-      `;
-      allSkillsList.insertAdjacentHTML('beforeend', itemHTML);
+  // "More" sheet on narrow screens
+  const setMore = (open) => {
+    if (!moreSheet || !moreBtn) return;
+    moreSheet.classList.toggle('open', open);
+    moreBtn.setAttribute('aria-expanded', String(open));
+    moreSheet.querySelectorAll('a').forEach((a) => { a.tabIndex = open ? 0 : -1; });
+  };
+  if (moreBtn && moreSheet) {
+    setMore(false);
+    moreBtn.addEventListener('click', (e) => { e.stopPropagation(); setMore(!moreSheet.classList.contains('open')); });
+    moreSheet.addEventListener('click', (e) => { if (e.target.closest('a')) setMore(false); });
+    document.addEventListener('click', (e) => { if (!moreSheet.contains(e.target) && e.target !== moreBtn) setMore(false); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && moreSheet.classList.contains('open')) { setMore(false); moreBtn.focus(); }
     });
   }
 
-  // Filter skills on search input
-  if (sidebarSearch) {
-    sidebarSearch.addEventListener('input', (e) => {
-      const term = e.target.value.toLowerCase();
-      const filtered = skillsArchive.filter(skill => 
-        skill.name.toLowerCase().includes(term) || 
-        skill.category.toLowerCase().includes(term) ||
-        skill.level.toLowerCase().includes(term)
-      );
-      renderSkills(filtered);
-    });
+  // 4. Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    reveals.forEach((el) => el.classList.add('is-visible'));
+  } else {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) { entry.target.classList.add('is-visible'); obs.unobserve(entry.target); }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach((el) => obs.observe(el));
   }
+});
 
-  // 6. Professional Vedic Numerology Calculator
+// ---------------------------------------------------------------
+// Numerology tool (carried over unchanged)
+// ---------------------------------------------------------------
+
+document.addEventListener('DOMContentLoaded', () => {
   const numForm = document.getElementById('numerology-form');
   if (numForm) {
     const dobInput = document.getElementById('dob-input');

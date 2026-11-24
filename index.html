@@ -2,218 +2,583 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Samir Khadka — Full-Stack Developer</title>
-  <meta name="description" content="Samir Khadka — full-stack software developer from Nepal. React, Node.js, Python, DevOps & Cloud. Recent BSc CSIT graduate building real, shipped software.">
-  <link rel="canonical" href="https://samir-khadka.com.np/"> <link rel="icon" type="image/svg+xml" href="/favicon.svg"> <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"> <link rel="apple-touch-icon" href="/apple-touch-icon.png"> <meta name="theme-color" content="#0f172a"> <meta property="og:type" content="website"> <meta property="og:site_name" content="Samir Khadka"> <meta property="og:title" content="Samir Khadka — Full-Stack Developer"> <meta property="og:description" content="Full-stack developer from Urlabari, Nepal. React, Node.js, Python, DevOps & Cloud. 17 projects shipped live."> <meta property="og:url" content="https://samir-khadka.com.np/"> <meta property="og:image" content="https://samir-khadka.com.np/assets/profile.jpg"> <meta name="twitter:card" content="summary_large_image"> <meta name="twitter:title" content="Samir Khadka — Full-Stack Developer"> <meta name="twitter:description" content="Full-stack developer from Urlabari, Nepal. React, Node.js, Python, DevOps & Cloud. 17 projects shipped live."> <meta name="twitter:image" content="https://samir-khadka.com.np/assets/profile.jpg">
+  <meta name="description" content="Samir Khadka — full-stack software developer from Nepal. React, Node.js, Python, DevOps &amp; Cloud. Recent BSc CSIT graduate building real, shipped software.">
+  <link rel="canonical" href="https://samir-khadka.com.np/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#0f172a">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Samir Khadka">
+  <meta property="og:title" content="Samir Khadka — Full-Stack Developer">
+  <meta property="og:description" content="Full-stack developer from Urlabari, Nepal. React, Node.js, Python, DevOps &amp; Cloud. 17 projects shipped live.">
+  <meta property="og:url" content="https://samir-khadka.com.np/">
+  <meta property="og:image" content="https://samir-khadka.com.np/assets/profile.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Samir Khadka — Full-Stack Developer">
+  <meta name="twitter:description" content="Full-stack developer from Urlabari, Nepal. React, Node.js, Python, DevOps &amp; Cloud. 17 projects shipped live.">
+  <meta name="twitter:image" content="https://samir-khadka.com.np/assets/profile.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=4">
-  <script>!function(){var t=localStorage.getItem('portfolioTheme');document.documentElement.setAttribute('data-theme',t||'dark');}();</script>
+  <link rel="stylesheet" href="style.css?v=5">
+  <script>!function(){var t;try{t=localStorage.getItem('portfolioTheme')}catch(e){}document.documentElement.setAttribute('data-theme',t||'dark');}();</script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Screen background fixed video container -->
-  <div class="bg-container">
-    <video id="bgVideo" class="bg-video" autoplay loop muted playsinline></video>
+  <!-- Background video + overlay (kept from the dark glass theme) -->
+  <div class="bg-container" aria-hidden="true">
+    <video id="bgVideo" class="bg-video" autoplay loop muted playsinline tabindex="-1"></video>
   </div>
-  <div class="video-overlay"></div>
+  <div class="video-overlay" aria-hidden="true"></div>
 
-  <!-- Header Navigation -->
-  <header class="site-head">
-    <div class="nav-inner">
-      <a href="index.html" class="brand">
-        <img src="assets/profile.jpg" alt="Samir Khadka Profile Photo" class="brand-avatar">
-        Samir Khadka
-      </a>
-      <nav class="links">
-        <a href="index.html" class="active">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="interests.html">Other Interests</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <div class="header-actions">
-        <button onclick="toggleTheme()" class="theme-toggle-btn" id="themeBtn" aria-label="Switch theme">
-          <span class="theme-icon">☀️</span><span class="theme-label">Light</span>
-        </button>
-        <button onclick="toggleSidebar(true)" class="drawer-toggle-btn" aria-label="Open Skills Drawer">
-          <i class="fas fa-layer-group"></i> <span class="drawer-label">Skills</span>
-        </button>
-        <button class="nav-toggle" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+  <header class="top-bar">
+    <nav class="pill top-nav" id="topNav" aria-label="Sections">
+      <span class="pill-glider" aria-hidden="true"></span>
+      <a href="#home" data-nav><i class="fas fa-house" aria-hidden="true"></i><span>Home</span></a><a href="#about" data-nav><i class="fas fa-user" aria-hidden="true"></i><span>About</span></a><a href="#skills" data-nav><i class="fas fa-code" aria-hidden="true"></i><span>Skills</span></a><a href="#projects" data-nav><i class="fas fa-folder-open" aria-hidden="true"></i><span>Projects</span></a><a href="#experience" data-nav><i class="fas fa-briefcase" aria-hidden="true"></i><span>Experience</span></a><a href="#education" data-nav><i class="fas fa-graduation-cap" aria-hidden="true"></i><span>Education</span></a><a href="#achievements" data-nav><i class="fas fa-award" aria-hidden="true"></i><span>Awards</span></a><a href="#interests" data-nav><i class="fas fa-chess-knight" aria-hidden="true"></i><span>Interests</span></a><a href="#contact" data-nav><i class="fas fa-envelope" aria-hidden="true"></i><span>Contact</span></a>
+    </nav>
+    <div class="pill controls" role="group" aria-label="Display controls">
+      <button type="button" id="themeBtn" aria-label="Switch to light theme"><i class="fas fa-sun" aria-hidden="true"></i></button>
+      <button type="button" id="bgToggle" aria-label="Pause background video" aria-pressed="false"><i class="fas fa-pause" aria-hidden="true"></i></button>
+      <button type="button" id="bgChange" aria-label="Change background video"><i class="fas fa-shuffle" aria-hidden="true"></i></button>
     </div>
   </header>
 
-  <!-- Main Hero Section -->
-  <section class="hero reveal-up">
-    <div class="hero-inner">
-      <div class="eyebrow">Urlabari, Nepal</div>
-      <h1>Building software <span class="heading-cinematic">and</span><br>designing the page around it.</h1>
-      <p class="lead">Full stack developer and graphic designer with a habit of thinking several moves ahead — on the board and in the codebase. Recent CS graduate, ready to bring fresh energy to a team that loves to build.</p>
+  <nav class="pill more-sheet" id="moreSheet" aria-label="More sections">
+    <a href="#about" data-nav><i class="fas fa-user" aria-hidden="true"></i><span>About</span></a><a href="#experience" data-nav><i class="fas fa-briefcase" aria-hidden="true"></i><span>Experience</span></a><a href="#education" data-nav><i class="fas fa-graduation-cap" aria-hidden="true"></i><span>Education</span></a><a href="#achievements" data-nav><i class="fas fa-award" aria-hidden="true"></i><span>Awards</span></a><a href="#interests" data-nav><i class="fas fa-chess-knight" aria-hidden="true"></i><span>Interests</span></a>
+  </nav>
+  <nav class="pill bottom-nav" id="bottomNav" aria-label="Sections">
+    <span class="pill-glider" aria-hidden="true"></span>
+    <a href="#home" data-nav><i class="fas fa-house" aria-hidden="true"></i><span>Home</span></a><a href="#skills" data-nav><i class="fas fa-code" aria-hidden="true"></i><span>Skills</span></a><a href="#projects" data-nav><i class="fas fa-folder-open" aria-hidden="true"></i><span>Projects</span></a><a href="#contact" data-nav><i class="fas fa-envelope" aria-hidden="true"></i><span>Contact</span></a>
+    <button type="button" id="moreBtn" aria-expanded="false" aria-controls="moreSheet"><i class="fas fa-ellipsis" aria-hidden="true"></i><span>More</span></button>
+  </nav>
 
-      <div class="hero-meta">
-        <div><strong>BSc CSIT</strong>2022 — 2026</div>
-        <div><strong>17</strong>Projects shipped</div>
-        <div><strong>10+</strong>students mentored</div>
-        <div><strong>U-16</strong>World Youth Chess Olympiad</div>
-      </div>
+  <main id="main">
 
-      <div class="btn-row">
-        <a href="projects.html" class="btn solid">View projects <i class="fas fa-arrow-right"></i></a>
-        <a href="contact.html" class="btn">Get in touch</a>
+    <!-- Home -->
+    <section id="home" class="hero">
+      <div class="wrap hero-grid">
+        <div class="reveal">
+          <p class="eyebrow">Urlabari, Nepal</p>
+          <p class="hero-hello">Hello, I'm</p>
+          <h1>Samir <em class="accent">Khadka</em></h1>
+          <p class="hero-role">Full-Stack Developer <span class="accent">&amp; Designer</span></p>
+          <p class="lead">Full stack developer and graphic designer with a habit of thinking several moves ahead — on the board and in the codebase. Recent CS graduate, ready to bring fresh energy to a team that loves to build.</p>
+          <div class="btn-row">
+            <a class="btn solid" href="#projects">View Projects <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            <a class="btn" href="#contact">Get in touch</a>
+          </div>
+          <hr class="hero-divider">
+          <div class="btn-row">
+            <a class="btn small" href="https://github.com/Samir-Khadka" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+            <a class="btn small" href="https://linkedin.com/in/khadka-samir" target="_blank" rel="noopener"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+          </div>
+        </div>
+        <div class="arch glass hero-arch reveal">
+          <picture><source srcset="assets/photos/samir-hero-beige-blazer.webp" type="image/webp"><img src="assets/photos/samir-hero-beige-blazer.jpg" width="800" height="1095" alt="Samir Khadka in a beige blazer and turtleneck, standing in front of a warm glowing circle" fetchpriority="high" decoding="async"></picture>
+          <span class="arch-tag glass"><i class="fas fa-location-dot" aria-hidden="true"></i> Urlabari, Nepal</span>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Skills & Tools -->
-  <section class="reveal-up">
-    <div class="section-inner">
-      <div class="section-head">
-        <h2>Skills &amp; tools</h2>
-        <span class="eyebrow">Stack</span>
+    <!-- About -->
+    <section id="about">
+      <div class="wrap about-grid">
+        <div class="arch glass about-arch reveal">
+          <picture><source srcset="assets/photos/samir-about-grey-suit.webp" type="image/webp"><img src="assets/photos/samir-about-grey-suit.jpg" width="720" height="894" alt="Samir Khadka in a grey suit and red tie, studio portrait" loading="lazy" decoding="async"></picture>
+        </div>
+        <div class="about-copy reveal">
+          <p class="eyebrow">About me</p>
+          <h2>Building software and designing the <em class="accent">page around it.</em></h2>
+          <p class="lead">Samir Khadka is a full stack software developer, graphic designer, and competitive chess player from Urlabari, Nepal.</p>
+          <p class="lead">Recent BSc CSIT graduate who has represented Nepal at the U-16 World Youth Chess Olympiad. Passionate about building premium visual web interfaces and solid DevOps/Cloud deployment automation.</p>
+          <ul class="stat-grid">
+            <li class="stat glass"><strong>BSc CSIT</strong><span>Graduated 2026</span></li>
+            <li class="stat glass"><strong>17</strong><span>Projects shipped</span></li>
+            <li class="stat glass"><strong>10+</strong><span>students mentored</span></li>
+            <li class="stat glass"><strong>U-16</strong><span>World Youth Chess Olympiad</span></li>
+          </ul>
+        </div>
       </div>
-      <div class="skill-grid">
-        <div class="skill-cell">Python</div>
-        <div class="skill-cell">JavaScript</div>
-        <div class="skill-cell">TypeScript</div>
-        <div class="skill-cell">React.js</div>
-        <div class="skill-cell">Node.js</div>
-        <div class="skill-cell">Express.js</div>
-        <div class="skill-cell">FastAPI</div>
-        <div class="skill-cell">Flask</div>
-        <div class="skill-cell">Django</div>
-        <div class="skill-cell">Tailwind CSS</div>
-        <div class="skill-cell">Vite</div>
-        <div class="skill-cell">WebSocket</div>
-        <div class="skill-cell">REST APIs</div>
-        <div class="skill-cell">SQL</div>
-        <div class="skill-cell">MongoDB</div>
-        <div class="skill-cell">Git</div>
-        <div class="skill-cell">Docker</div>
-        <div class="skill-cell">Kubernetes</div>
-        <div class="skill-cell">Terraform</div>
-        <div class="skill-cell">Jenkins</div>
-        <div class="skill-cell">AWS</div>
-        <div class="skill-cell">Linux</div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Training & Achievements -->
-  <section class="reveal-up">
-    <div class="section-inner">
-      <div class="section-head">
-        <h2>Training &amp; achievements</h2>
-        <span class="eyebrow">Record</span>
-      </div>
-      <div class="glass-card">
-        <div class="timeline">
-          <div class="tl-item">
-            <span class="date">Aug 2025 — Present</span>
-            <h4>DevOps &amp; Cloud Training, AMCNSS</h4>
-            <p>Hands-on training in Linux, Git, Jenkins, Docker, Kubernetes, Terraform, AWS, and GitHub — covering system administration, CI/CD, containerization, infrastructure as code, and collaborative workflows.</p>
+    <!-- Skills -->
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Skills &amp; tools</p>
+          <h2>Technologies I <em class="accent">use</em></h2>
+        </div>
+        <div class="skills-grid">
+          <div class="glass card reveal">
+            <div class="card-title"><i class="fas fa-layer-group" aria-hidden="true"></i> Core stack</div>
+            <p class="sub-label">Languages</p>
+            <ul class="tiles"><li class="tile"><i class="fab fa-python" aria-hidden="true"></i><span>Python</span></li><li class="tile"><i class="fab fa-js" aria-hidden="true"></i><span>JavaScript</span></li><li class="tile"><span class="mono-ico" aria-hidden="true">TS</span><span>TypeScript</span></li><li class="tile"><span class="mono-ico" aria-hidden="true">C++</span><span>C++</span></li><li class="tile"><i class="fas fa-database" aria-hidden="true"></i><span>SQL</span></li></ul>
+            <p class="sub-label">Frontend</p>
+            <ul class="tiles"><li class="tile"><i class="fab fa-react" aria-hidden="true"></i><span>React.js</span></li><li class="tile"><i class="fas fa-wind" aria-hidden="true"></i><span>Tailwind CSS</span></li><li class="tile"><i class="fas fa-bolt" aria-hidden="true"></i><span>Vite</span></li></ul>
+            <p class="sub-label">Backend &amp; data</p>
+            <ul class="tiles"><li class="tile"><i class="fab fa-node-js" aria-hidden="true"></i><span>Node.js</span></li><li class="tile"><span class="mono-ico" aria-hidden="true">ex</span><span>Express.js</span></li><li class="tile"><i class="fas fa-bolt-lightning" aria-hidden="true"></i><span>FastAPI</span></li><li class="tile"><i class="fas fa-flask" aria-hidden="true"></i><span>Flask</span></li><li class="tile"><span class="mono-ico" aria-hidden="true">dj</span><span>Django</span></li><li class="tile"><i class="fas fa-cloud" aria-hidden="true"></i><span>REST APIs</span></li><li class="tile"><i class="fas fa-right-left" aria-hidden="true"></i><span>WebSocket</span></li><li class="tile"><i class="fas fa-leaf" aria-hidden="true"></i><span>MongoDB</span></li></ul>
           </div>
-          <div class="tl-item">
-            <span class="date">2024</span>
-            <h4>Best Project Award — Bachelor's Major Project</h4>
-            <p>Recognized for the Live Cricket Scoreboard application, outstanding in technical execution and real-world effort.</p>
-          </div>
-          <div class="tl-item">
-            <span class="date">2024</span>
-            <h4>Version Control with Git &amp; GitHub — LinkedIn Learning</h4>
-            <p>Professional certification covering modern collaborative version control workflows and repository management.</p>
-          </div>
-          <div class="tl-item">
-            <span class="date">Ongoing</span>
-            <h4>Academic Scholarship</h4>
-            <p>Awarded for academic merit, recognizing consistent study habits, performance, and programming dedication.</p>
-          </div>
-          <div class="tl-item">
-            <span class="date">Ongoing</span>
-            <h4>Mentorship &amp; Teaching</h4>
-            <p>Mentored 10+ junior students in programming, and volunteered as a coding instructor at a local school, teaching Python for two months.</p>
+          <div class="skills-side">
+            <div class="glass card reveal">
+              <div class="card-title"><i class="fas fa-cloud" aria-hidden="true"></i> DevOps &amp; cloud</div>
+              <p class="sub-label">Other tools</p>
+              <ul class="tiles"><li class="tile"><i class="fab fa-git-alt" aria-hidden="true"></i><span>Git</span></li><li class="tile"><i class="fab fa-docker" aria-hidden="true"></i><span>Docker</span></li><li class="tile"><i class="fas fa-dharmachakra" aria-hidden="true"></i><span>Kubernetes</span></li><li class="tile"><i class="fas fa-cubes" aria-hidden="true"></i><span>Terraform</span></li><li class="tile"><i class="fab fa-jenkins" aria-hidden="true"></i><span>Jenkins</span></li><li class="tile"><i class="fab fa-aws" aria-hidden="true"></i><span>AWS</span></li><li class="tile"><i class="fab fa-linux" aria-hidden="true"></i><span>Linux</span></li></ul>
+            </div>
+            <figure class="photo glass reveal">
+              <picture><source srcset="assets/photos/samir-skills-blue-light.webp" type="image/webp"><img src="assets/photos/samir-skills-blue-light.jpg" width="720" height="987" alt="Samir Khadka in a dark jacket and black turtleneck, lit in blue and pink" loading="lazy" decoding="async"></picture>
+            </figure>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="site-foot">
-    <div class="foot-inner">
-      <span>© 2026 Samir Khadka.</span>
-      <div style="display:flex;gap:20px;">
-        <a href="https://linkedin.com/in/khadka-samir" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <a href="https://github.com/Samir-Khadka" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
-        <a href="mailto:samirshirjan890@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+    <!-- Projects -->
+    <section id="projects">
+      <div class="wrap">
+        <div class="head-row">
+          <div class="section-head reveal">
+            <p class="eyebrow">Selected work</p>
+            <h2>Seventeen <em class="accent">projects</em></h2>
+            <p>Real problems, built end to end — from data model to deployed interface.</p>
+          </div>
+          <figure class="photo glass reveal">
+            <picture><source srcset="assets/photos/samir-projects-navy-blazer.webp" type="image/webp"><img src="assets/photos/samir-projects-navy-blazer.jpg" width="640" height="877" alt="Samir Khadka in a navy blazer and white shirt against a maroon backdrop" loading="lazy" decoding="async"></picture>
+          </figure>
+        </div>
+        <div class="project-grid">
+        <article class="project glass lift card reveal" style="--c1:#d9a24d;--c2:#3fa796">
+          <div class="project-no">PROJECT 01</div>
+          <div class="preview" aria-hidden="true">
+            <div class="preview-bar"><span></span><span></span><span></span></div>
+            <div class="preview-mark"><i class="fas fa-baseball-bat-ball"></i><b>CV</b></div>
+          </div>
+          <div class="project-body">
+            <div class="project-cat">Full-Stack Web</div>
+            <h3>CricScore-v2</h3>
+            <p>Event-sourced cricket scoring engine with a React 19 mobile scorer console and pro viewer — ball-by-ball updates, win probability, secured scoring API.</p>
+            <div class="chips"><span class="chip">React 19</span><span class="chip">Node.js</span><span class="chip">MongoDB</span><span class="chip">JWT</span><span class="chip">Event Sourcing</span></div>
+            <div class="btn-row"><a class="btn small solid" href="https://cricscore-v2.wasmer.app" target="_blank" rel="noopener" aria-label="Open CricScore-v2 live demo"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> Live demo</a></div>
+          </div>
+        </article>
+        <article class="project glass lift card reveal" style="--c1:#3fa796;--c2:#d9a24d">
+          <div class="project-no">PROJECT 02</div>
+          <div class="preview" aria-hidden="true">
+            <div class="preview-bar"><span></span><span></span><span></span></div>
+            <div class="preview-mark"><i class="fas fa-seedling"></i><b>KB</b></div>
+          </div>
+          <div class="project-body">
+            <div class="project-cat">Marketplace</div>
+            <h3>Kishan-Bazzar</h3>
+            <p>Bilingual Nepali/English agri marketplace — bid/offer system, Crop Doctor, machinery rentals, price trends, and a trilingual AI assistant for farmers.</p>
+            <div class="chips"><span class="chip">Flask</span><span class="chip">SQLite</span><span class="chip">JWT</span><span class="chip">Nepali/English</span></div>
+            <div class="btn-row"><a class="btn small solid" href="https://kishan-bazzar.onrender.com" target="_blank" rel="noopener" aria-label="Open Kishan-Bazzar live demo"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> Live demo</a><a class="btn small" href="https://github.com/Samir-Khadka/Kishan-Bazzar" target="_blank" rel="noopener" aria-label="View Kishan-Bazzar on GitHub"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></div>
+          </div>
+        </article>
+        <article class="project glass lift card reveal" style="--c1:#d9a24d;--c2:#8a6ad9">
+          <div class="project-no">PROJECT 03</div>
+          <div class="preview" aria-hidden="true">
+            <div class="preview-bar"><span></span><span></span><span></span></div>
+            <div class="preview-mark"><i class="fas fa-star-and-crescent"></i><b>VA</b></div>
+          </div>
+          <div class="project-body">
+            <div class="project-cat">Web Platform</div>
+            <h3>Vedic Astro</h3>
+            <p>Bilingual Vedic astrology platform — Lagna + Navamsa kundali, 16 vargas, classical dashas, Shadbala, KP, Jaimini, predictive intelligence, and a 25-chapter PDF report.</p>
+            <div class="chips"><span class="chip">FastAPI</span><span class="chip">pyswisseph</span><span class="chip">Lahiri</span><span class="chip">EN/नेपाली</span></div>
+            <div class="btn-row"><a class="btn small solid" href="https://vedic-astro-ggel.onrender.com" target="_blank" rel="noopener" aria-label="Open Vedic Astro live demo"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> Live demo</a><a class="btn small" href="https://github.com/Samir-Khadka/vedic-astro" target="_blank" rel="noopener" aria-label="View Vedic Astro on GitHub"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></div>
+          </div>
+        </article>
+        <article class="project glass lift card reveal" style="--c1:#3f7fd9;--c2:#3fa796">
+          <div class="project-no">PROJECT 04</div>
+          <div class="preview" aria-hidden="true">
+            <div class="preview-bar"><span></span><span></span><span></span></div>
+            <div class="preview-mark"><i class="fas fa-diagram-project"></i><b>TD</b></div>
+          </div>
+          <div class="project-body">
+            <div class="project-cat">DevOps</div>
+            <h3>TaskBoard DevOps</h3>
+            <p>Full DevOps showcase — Node API with multi-stage Docker, Compose observability stack, GitHub Actions CI, Terraform on AWS, Ansible, and Kubernetes manifests.</p>
+            <div class="chips"><span class="chip">Node.js</span><span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">Terraform</span><span class="chip">Prometheus</span></div>
+            <div class="btn-row"><a class="btn small solid" href="https://taskboard-web-ykc3.onrender.com" target="_blank" rel="noopener" aria-label="Open TaskBoard DevOps live demo"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> Live demo</a><a class="btn small" href="https://github.com/Samir-Khadka/taskboard-devops" target="_blank" rel="noopener" aria-label="View TaskBoard DevOps on GitHub"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></div>
+          </div>
+        </article>
+        <article class="project glass lift card reveal" style="--c1:#3fa796;--c2:#3f7fd9">
+          <div class="project-no">PROJECT 05</div>
+          <div class="preview" aria-hidden="true">
+            <div class="preview-bar"><span></span><span></span><span></span></div>
+            <div class="preview-mark"><i class="fas fa-dumbbell"></i><b>FP</b></div>
+          </div>
+          <div class="project-body">
+            <div class="project-cat">Web App</div>
+            <h3>FitTrack Pro</h3>
+            <p>Workout tracking web app — auth, workout logger with rest timer, 32-exercise library, personal records, measurements with SVG charts, and goals.</p>
+            <div class="chips"><span class="chip">React 19</span><span class="chip">Vite</span><span class="chip">JWT</span><span class="chip">MongoDB</span></div>
+            <div class="btn-row"><a class="btn small solid" href="https://fittrack-web-afi4.onrender.com" target="_blank" rel="noopener" aria-label="Open FitTrack Pro live demo"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> Live demo</a><a class="btn small" href="https://github.com/Samir-Khadka/Fitnessweb-app" target="_blank" rel="noopener" aria-label="View FitTrack Pro on GitHub"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></div>
+          </div>
+        </article>
+        <article class="project glass lift card reveal" style="--c1:#d9634d;--c2:#d9a24d">
+          <div class="project-no">PROJECT 06</div>
+          <div class="preview" aria-hidden="true">
+            <div class="preview-bar"><span></span><span></span><span></span></div>
+            <div class="preview-mark"><i class="fas fa-house-flood-water"></i><b>SU</b></div>
+          </div>
+          <div class="project-body">
+            <div class="project-cat">Civic Tech</div>
+            <h3>Suraksha</h3>
+            <p>Disaster management for all 77 districts of Nepal — live quakes, DHM river gauges, weather chain, GLOF lake registry, and an honest live/verified/model data contract.</p>
+            <div class="chips"><span class="chip">FastAPI</span><span class="chip">Leaflet</span><span class="chip">USGS</span><span class="chip">DHM</span><span class="chip">EN/नेपाली</span></div>
+            <div class="btn-row"><a class="btn small solid" href="https://suraksha-r6l4.onrender.com" target="_blank" rel="noopener" aria-label="Open Suraksha live demo"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> Live demo</a><a class="btn small" href="https://github.com/Samir-Khadka/suraksha" target="_blank" rel="noopener" aria-label="View Suraksha on GitHub"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></div>
+          </div>
+        </article>
+        <article class="project glass lift card reveal" style="--c1:#d9a24d;--c2:#d9634d">
+          <div class="project-no">PROJECT 07</div>
+          <div class="preview" aria-hidden="true">
+            <div class="preview-bar"><span></span><span></span><span></span></div>
+            <div class="preview-mark"><i class="fas fa-file-invoice"></i><b>IFC</b></div>
+          </div>
+          <div class="project-body">
+            <div class="project-cat">Fraud Detection</div>
+            <h3>Invoice Fraud Checker</h3>
+            <p>Six explainable fraud-detection rules for invoices — duplicate and bank-change flags, math checks, OCR via Tesseract, mobile-first review flow. Never a bare score.</p>
+            <div class="chips"><span class="chip">FastAPI</span><span class="chip">SQLite</span><span class="chip">Tesseract OCR</span><span class="chip">Rule Engine</span></div>
+            <div class="btn-row"><a class="btn small" href="https://github.com/Samir-Khadka/invoice-fraud-checker" target="_blank" rel="noopener" aria-label="View Invoice Fraud Checker on GitHub"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></div>
+          </div>
+        </article>
+        <article class="project glass lift card reveal" style="--c1:#8a6ad9;--c2:#3fa796">
+          <div class="project-no">PROJECT 08</div>
+          <div class="preview" aria-hidden="true">
+            <div class="preview-bar"><span></span><span></span><span></span></div>
+            <div class="preview-mark"><i class="fas fa-microphone-lines"></i><b>SVA</b></div>
+          </div>
+          <div class="project-body">
+            <div class="project-cat">Voice Assistant</div>
+            <h3>Sahayak Voice Assistant</h3>
+            <p>Bilingual English/Nepali voice assistant — Windows Python core with hybrid speech and system control, plus a native Android app with always-on "Jarvis" wake word.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">Kotlin</span><span class="chip">Porcupine</span><span class="chip">EN/NE</span></div>
+            <div class="btn-row"><a class="btn small" href="https://github.com/Samir-Khadka/sahayak-voice-assistant" target="_blank" rel="noopener" aria-label="View Sahayak Voice Assistant on GitHub"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></div>
+          </div>
+        </article>
+        <article class="project glass lift card reveal" style="--c1:#3fa796;--c2:#8a6ad9">
+          <div class="project-no">PROJECT 09</div>
+          <div class="preview" aria-hidden="true">
+            <div class="preview-bar"><span></span><span></span><span></span></div>
+            <div class="preview-mark"><i class="fas fa-comments"></i><b>MA</b></div>
+          </div>
+          <div class="project-body">
+            <div class="project-cat">API</div>
+            <h3>Messaging API</h3>
+            <p>One API for SMS, WhatsApp, RCS, and OTP — HMAC-hashed one-time codes, rate limits, provider adapters for Twilio and Meta WhatsApp Cloud.</p>
+            <div class="chips"><span class="chip">FastAPI</span><span class="chip">OTP</span><span class="chip">Twilio</span><span class="chip">WhatsApp</span></div>
+            <div class="btn-row"><a class="btn small solid" href="https://messaging-api-vv7f.onrender.com" target="_blank" rel="noopener" aria-label="Open Messaging API live demo"><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> Live demo</a><a class="btn small" href="https://github.com/Samir-Khadka/messaging-api" target="_blank" rel="noopener" aria-label="View Messaging API on GitHub"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></div>
+          </div>
+        </article>
+        <article class="project glass lift card reveal" style="--c1:#3fa796;--c2:#d9a24d">
+          <div class="project-no">PROJECT 10</div>
+          <div class="preview" aria-hidden="true">
+            <div class="preview-bar"><span></span><span></span><span></span></div>
+            <div class="preview-mark"><i class="fas fa-futbol"></i><b>FMA</b></div>
+          </div>
+          <div class="project-body">
+            <div class="project-cat">Computer Vision</div>
+            <h3>Football Match Analyzer</h3>
+            <p>Video → tactical report pipeline — YOLO detection, ByteTrack tracking, pitch homography calibration, xG heuristics, heatmaps, pass networks, and highlight clips.</p>
+            <div class="chips"><span class="chip">YOLOv8</span><span class="chip">PyTorch</span><span class="chip">ByteTrack</span><span class="chip">FastAPI</span></div>
+            <div class="btn-row"><a class="btn small" href="https://github.com/Samir-Khadka/football-match-analyzer" target="_blank" rel="noopener" aria-label="View Football Match Analyzer on GitHub"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></div>
+          </div>
+        </article>
+        <article class="project glass lift card reveal" style="--c1:#d9a24d;--c2:#3f7fd9">
+          <div class="project-no">PROJECT 11</div>
+          <div class="preview" aria-hidden="true">
+            <div class="preview-bar"><span></span><span></span><span></span></div>
+            <div class="preview-mark"><i class="fas fa-shield-halved"></i><b>JOV</b></div>
+          </div>
+          <div class="project-body">
+            <div class="project-cat">Safety Tool</div>
+            <h3>Job Offer Verifier</h3>
+            <p>Red-flag rule engine protecting Nepali migrant workers from offer fraud — upfront-fee, pressure-language, and contract-substitution detection with DoFE guidance.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">Rule Engine</span><span class="chip">Safety-first</span></div>
+            <div class="btn-row"><a class="btn small" href="https://github.com/Samir-Khadka/job-offer-verifier" target="_blank" rel="noopener" aria-label="View Job Offer Verifier on GitHub"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></div>
+          </div>
+        </article>
+        <article class="project glass lift card reveal" style="--c1:#d9634d;--c2:#d9a24d">
+          <div class="project-no">PROJECT 12</div>
+          <div class="preview" aria-hidden="true">
+            <div class="preview-bar"><span></span><span></span><span></span></div>
+            <div class="preview-mark"><i class="fas fa-book-open"></i><b>HB</b></div>
+          </div>
+          <div class="project-body">
+            <div class="project-cat">Bilingual Web</div>
+            <h3>Hindu Books</h3>
+            <p>Eight complete Hindu scriptures in English and Nepali — Bhagavad Gita, Hanuman Chalisa, Ramayana, Upanishads, Vedas, Puranas, Mahabharata, Bhagavata Purana.</p>
+            <div class="chips"><span class="chip">FastAPI</span><span class="chip">Jinja2</span><span class="chip">EN/नेपाली</span></div>
+            <div class="btn-row"><a class="btn small" href="https://github.com/Samir-Khadka/hindu-books" target="_blank" rel="noopener" aria-label="View Hindu Books on GitHub"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></div>
+          </div>
+        </article>
+        <article class="project glass lift card reveal" style="--c1:#3f7fd9;--c2:#8a6ad9">
+          <div class="project-no">PROJECT 13</div>
+          <div class="preview" aria-hidden="true">
+            <div class="preview-bar"><span></span><span></span><span></span></div>
+            <div class="preview-mark"><i class="fas fa-share-nodes"></i><b>SP</b></div>
+          </div>
+          <div class="project-body">
+            <div class="project-cat">Automation</div>
+            <h3>Social Poster</h3>
+            <p>All-in-one cross-posting agent — one command publishes to Instagram, Facebook, and Threads, with X, YouTube, and TikTok wired through official APIs.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">Meta APIs</span><span class="chip">YouTube API</span><span class="chip">X API</span></div>
+            <div class="btn-row"><a class="btn small" href="https://github.com/Samir-Khadka/social-poster" target="_blank" rel="noopener" aria-label="View Social Poster on GitHub"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></div>
+          </div>
+        </article>
+        <article class="project glass lift card reveal" style="--c1:#3f7fd9;--c2:#3fa796">
+          <div class="project-no">PROJECT 14</div>
+          <div class="preview" aria-hidden="true">
+            <div class="preview-bar"><span></span><span></span><span></span></div>
+            <div class="preview-mark"><i class="fas fa-ship"></i><b>SH</b></div>
+          </div>
+          <div class="project-body">
+            <div class="project-cat">Platform Engineering</div>
+            <h3>ShipIt</h3>
+            <p>Self-driving Kubernetes delivery platform — ArgoCD GitOps, Flagger + Linkerd canaries with auto-rollback, Trivy/cosign/Kyverno policy gates, and Prometheus/Grafana/Loki/Tempo observability with SLO burn-rate alerts.</p>
+            <div class="chips"><span class="chip">Kubernetes</span><span class="chip">ArgoCD</span><span class="chip">Flagger</span><span class="chip">Linkerd</span><span class="chip">Prometheus</span></div>
+            <div class="btn-row"><a class="btn small" href="https://github.com/Samir-Khadka/shipit-platform" target="_blank" rel="noopener" aria-label="View ShipIt on GitHub"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></div>
+          </div>
+        </article>
+        <article class="project glass lift card reveal" style="--c1:#3fa796;--c2:#d9634d">
+          <div class="project-no">PROJECT 15</div>
+          <div class="preview" aria-hidden="true">
+            <div class="preview-bar"><span></span><span></span><span></span></div>
+            <div class="preview-mark"><i class="fas fa-stethoscope"></i><b>MA</b></div>
+          </div>
+          <div class="project-body">
+            <div class="project-cat">Healthcare App</div>
+            <h3>MediBook AI</h3>
+            <p>Complete doctor-appointment platform — FastAPI backend with JWT auth and appointment conflict detection, React + TypeScript frontend with 14-day slot booking, an offline AI symptom checker, and patient/doctor/admin dashboards.</p>
+            <div class="chips"><span class="chip">FastAPI</span><span class="chip">React 18</span><span class="chip">TypeScript</span><span class="chip">JWT</span></div>
+            <div class="btn-row"><a class="btn small" href="https://github.com/Samir-Khadka/medibook-ai" target="_blank" rel="noopener" aria-label="View MediBook AI on GitHub"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></div>
+          </div>
+        </article>
+        <article class="project glass lift card reveal" style="--c1:#8a6ad9;--c2:#d9a24d">
+          <div class="project-no">PROJECT 16</div>
+          <div class="preview" aria-hidden="true">
+            <div class="preview-bar"><span></span><span></span><span></span></div>
+            <div class="preview-mark"><i class="fas fa-tower-broadcast"></i><b>IC</b></div>
+          </div>
+          <div class="project-body">
+            <div class="project-cat">DevOps Tooling</div>
+            <h3>Incident Copilot</h3>
+            <p>Incident intelligence for engineering teams — GitHub webhook collector, event timeline API and web view, nightly backup restore checker, and a Telegram bot that answers "what changed?" and "can we trust our backups?"</p>
+            <div class="chips"><span class="chip">FastAPI</span><span class="chip">Telegram</span><span class="chip">Docker</span><span class="chip">PostgreSQL</span></div>
+            <div class="btn-row"><a class="btn small" href="https://github.com/Samir-Khadka/incident-copilot" target="_blank" rel="noopener" aria-label="View Incident Copilot on GitHub"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></div>
+          </div>
+        </article>
+        <article class="project glass lift card reveal" style="--c1:#d9a24d;--c2:#8a6ad9">
+          <div class="project-no">PROJECT 17</div>
+          <div class="preview" aria-hidden="true">
+            <div class="preview-bar"><span></span><span></span><span></span></div>
+            <div class="preview-mark"><i class="fas fa-film"></i><b>VE</b></div>
+          </div>
+          <div class="project-body">
+            <div class="project-cat">CLI Tool</div>
+            <h3>Video Editor</h3>
+            <p>Command-line video agent — reframe to 9:16, auto-caption, cut silences, trim, text overlays, thumbnails, and compress, with filler-word removal and auto-ducked music.</p>
+            <div class="chips"><span class="chip">Python</span><span class="chip">ffmpeg</span><span class="chip">CLI</span></div>
+            <div class="btn-row"><a class="btn small" href="https://github.com/Samir-Khadka/video-editor" target="_blank" rel="noopener" aria-label="View Video Editor on GitHub"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></div>
+          </div>
+        </article>
+        </div>
+        <div class="glass card note-card reveal">
+          <p class="eyebrow">More on the way</p>
+          <p class="lead" style="margin:0">This page grows as new projects ship. Have something in mind you'd like built? <a href="#contact">Let's talk</a>.</p>
+        </div>
       </div>
+    </section>
+
+    <!-- Experience / training -->
+    <section id="experience">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Record</p>
+          <h2>Training &amp; <em class="accent">experience</em></h2>
+        </div>
+        <div class="exp-grid">
+          <div class="timeline">
+            <article class="tl glass card reveal">
+              <span class="tl-date">Aug 2025 — Present</span>
+              <h3>DevOps &amp; Cloud Training, AMCNSS</h3>
+              <p>Hands-on training in Linux, Git, Jenkins, Docker, Kubernetes, Terraform, AWS, and GitHub — covering system administration, CI/CD, containerization, infrastructure as code, and collaborative workflows.</p>
+            </article>
+            <article class="tl glass card reveal">
+              <span class="tl-date">Ongoing</span>
+              <h3>Mentorship &amp; Teaching</h3>
+              <p>Mentored 10+ junior students in programming, and volunteered as a coding instructor at a local school, teaching Python for two months.</p>
+            </article>
+          </div>
+          <figure class="photo glass reveal">
+            <picture><source srcset="assets/photos/samir-experience-profile.webp" type="image/webp"><img src="assets/photos/samir-experience-profile.jpg" width="640" height="876" alt="Side profile of Samir Khadka in a navy blazer with warm rim light" loading="lazy" decoding="async"></picture>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Education</p>
+          <h2>Academic <em class="accent">background</em></h2>
+        </div>
+        <article class="glass card edu-card reveal">
+          <span class="edu-ico" aria-hidden="true"><i class="fas fa-graduation-cap"></i></span>
+          <div>
+            <span class="tl-date">Graduated June 2026</span>
+            <h3>BSc CSIT — Computer Science &amp; Information Technology</h3>
+            <p>Shreeyantra College, Tribhuvan University · Nepal</p>
+            <p>Bachelor's major project: the Live Cricket Scoreboard application, recognised with the Best Project Award.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Certifications & achievements -->
+    <section id="achievements">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Recognition</p>
+          <h2>Certifications &amp; <em class="accent">achievements</em></h2>
+        </div>
+        <div class="two-col">
+          <div class="glass card reveal">
+            <div class="card-title"><i class="fas fa-certificate" aria-hidden="true"></i> Certifications</div>
+            <ul class="checks">
+              <li><i class="fas fa-check" aria-hidden="true"></i><div><b>Version Control with Git &amp; GitHub — LinkedIn Learning</b><small>2024 · Professional certification covering modern collaborative version control workflows and repository management.</small></div></li>
+              <li><i class="fas fa-check" aria-hidden="true"></i><div><b>DevOps &amp; Cloud Training, AMCNSS</b><small>Aug 2025 — Present · Linux, Git, Jenkins, Docker, Kubernetes, Terraform, AWS.</small></div></li>
+            </ul>
+          </div>
+          <div class="glass card reveal">
+            <div class="card-title"><i class="fas fa-trophy" aria-hidden="true"></i> Achievements</div>
+            <ul class="checks">
+              <li><i class="fas fa-check" aria-hidden="true"></i><div><b>Best Project Award — Bachelor's Major Project</b><small>2024 · Recognized for the Live Cricket Scoreboard application, outstanding in technical execution and real-world effort.</small></div></li>
+              <li><i class="fas fa-check" aria-hidden="true"></i><div><b>Academic Scholarship</b><small>Ongoing · Awarded for academic merit, recognizing consistent study habits, performance, and programming dedication.</small></div></li>
+              <li><i class="fas fa-check" aria-hidden="true"></i><div><b>U-16 World Youth Chess Olympiad</b><small>Represented Nepal against junior players from around the world.</small></div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Other interests -->
+    <section id="interests">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Beyond the codebase</p>
+          <h2>Other <em class="accent">Interests</em></h2>
+          <p>Three boards I play on: the chessboard, the design canvas, and the number grid.</p>
+        </div>
+
+        <article class="glass card interest reveal">
+          <div>
+            <span class="interest-no">01 / CHESS</span>
+            <h3>Competitive Chess</h3>
+            <p class="lead">Represented Nepal at the U-16 World Youth Chess Olympiad — competing against junior players from around the world and learning to think in calculated, multi-move sequences under pressure.</p>
+          </div>
+          <div>
+            <p>That same discipline — read the position, weigh the options, commit to a line — carries straight into how I approach debugging, system architecture, and optimization.</p>
+            <div class="chess-stats">
+              <div class="chess-stat"><strong>U-16</strong><span>World Youth Olympiad</span></div>
+              <div class="chess-stat"><strong>Junior</strong><span>Competitive level</span></div>
+              <div class="chess-stat"><strong>Strategy</strong><span>Calculated decisions</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="glass card interest reveal">
+          <div>
+            <span class="interest-no">02 / DESIGN</span>
+            <h3>Graphic Design</h3>
+            <p class="lead">Design and code feed each other. Working as a graphic designer sharpened an eye for layout, typography, and color theory that shows up directly in the interfaces I build.</p>
+          </div>
+          <div>
+            <p>I aim to construct pixel-perfect websites that combine premium layouts and responsive design. The design and structure of this portfolio is a direct reflection of these visual instincts.</p>
+            <div class="chips">
+              <span class="chip">Layout &amp; Typography</span><span class="chip">Branding</span><span class="chip">UI Composition</span><span class="chip">Color Systems</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="glass card interest top reveal">
+          <div>
+            <span class="interest-no">03 / NUMEROLOGY</span>
+            <h3>Numerology</h3>
+            <p class="lead">A long-running fascination with the patterns hidden in numbers — the same curiosity that pulls me toward algorithms and clean data systems.</p>
+            <p>Try the professional Vedic calculator: enter your date of birth to uncover your deep numerology profile based on your <strong>Mulank</strong> (Psychic Number) and <strong>Bhagyank</strong> (Destiny Number) including detailed life, career, and love predictions.</p>
+          </div>
+          <div>
+            <div class="numerology-tool">
+              <form id="numerology-form">
+                <label for="dob-input">Date of birth</label>
+                <input type="date" id="dob-input" required>
+                <button type="submit" class="btn solid">Generate Vedic Report <i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+              </form>
+              <div class="num-result" id="num-result" aria-live="polite"></div>
+              <p class="num-disclaimer">For fun and reflection — numerology is a tradition of pattern and symbolism, not a scientific or predictive method.</p>
+            </div>
+          </div>
+        </article>
+
+        <div class="gallery">
+          <figure class="photo glass reveal"><picture><source srcset="assets/photos/samir-interests-sofa.webp" type="image/webp"><img src="assets/photos/samir-interests-sofa.jpg" width="680" height="931" alt="Samir Khadka in a green turtleneck sitting on a red leather sofa" loading="lazy" decoding="async"></picture></figure>
+          <figure class="photo glass reveal"><picture><source srcset="assets/photos/samir-interests-night-city.webp" type="image/webp"><img src="assets/photos/samir-interests-night-city.jpg" width="680" height="931" alt="Samir Khadka laughing, seen from below between city towers at night" loading="lazy" decoding="async"></picture></figure>
+          <figure class="photo glass reveal"><picture><source srcset="assets/photos/samir-interests-lakeside.webp" type="image/webp"><img src="assets/photos/samir-interests-lakeside.jpg" width="680" height="932" alt="Samir Khadka in a patterned sweater and sunglasses beside a bamboo fence and a lake" loading="lazy" decoding="async"></picture></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Let's talk</p>
+          <h2>Get in <em class="accent">touch</em></h2>
+          <p>Open to full-stack roles, freelance design work, and anything interesting in between.</p>
+        </div>
+        <div class="contact-layout">
+          <div class="glass card rows reveal">
+            <a class="row" href="mailto:samirshirjan890@gmail.com"><span class="row-ico"><i class="fas fa-envelope" aria-hidden="true"></i></span><span><small>Email</small><b>samirshirjan890@gmail.com</b></span><i class="fas fa-arrow-up-right-from-square go" aria-hidden="true"></i></a>
+            <a class="row" href="tel:+9779862853613"><span class="row-ico"><i class="fas fa-phone" aria-hidden="true"></i></span><span><small>Phone</small><b>+977 9862853613</b></span><i class="fas fa-arrow-up-right-from-square go" aria-hidden="true"></i></a>
+            <div class="row"><span class="row-ico"><i class="fas fa-location-dot" aria-hidden="true"></i></span><span><small>Location</small><b>Urlabari, Nepal</b></span></div>
+            <a class="row" href="https://github.com/Samir-Khadka" target="_blank" rel="noopener"><span class="row-ico"><i class="fab fa-github" aria-hidden="true"></i></span><span><small>GitHub</small><b>github.com/Samir-Khadka</b></span><i class="fas fa-arrow-up-right-from-square go" aria-hidden="true"></i></a>
+            <a class="row" href="https://linkedin.com/in/khadka-samir" target="_blank" rel="noopener"><span class="row-ico"><i class="fab fa-linkedin" aria-hidden="true"></i></span><span><small>LinkedIn</small><b>linkedin.com/in/khadka-samir</b></span><i class="fas fa-arrow-up-right-from-square go" aria-hidden="true"></i></a>
+            <a class="row" href="https://samir-khadka.com.np/" target="_blank" rel="noopener"><span class="row-ico"><i class="fas fa-globe" aria-hidden="true"></i></span><span><small>Website</small><b>samir-khadka.com.np</b></span><i class="fas fa-arrow-up-right-from-square go" aria-hidden="true"></i></a>
+          </div>
+          <div class="glass card contact-panel reveal">
+            <div class="photo-inline"><picture><source srcset="assets/photos/samir-contact-coat-scarf.webp" type="image/webp"><img src="assets/photos/samir-contact-coat-scarf.jpg" width="720" height="986" alt="Samir Khadka smiling in a brown coat and navy scarf" loading="lazy" decoding="async"></picture></div>
+            <h3>Have something in <em class="accent">mind?</em></h3>
+            <p>Open to full-stack roles, freelance design work, and anything interesting in between.</p>
+            <a class="btn solid" href="mailto:samirshirjan890@gmail.com"><i class="fas fa-paper-plane" aria-hidden="true"></i> Email me</a>
+            <a class="btn" href="https://linkedin.com/in/khadka-samir" target="_blank" rel="noopener"><i class="fab fa-linkedin" aria-hidden="true"></i> Connect on LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap foot-grid">
+      <span class="foot-brand">Samir <em class="accent">Khadka</em></span>
+      <nav class="foot-nav" aria-label="Footer"><a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#achievements">Awards</a><a href="#interests">Interests</a><a href="#contact">Contact</a></nav>
+      <div class="foot-social">
+        <a href="https://linkedin.com/in/khadka-samir" target="_blank" rel="noopener"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+        <a href="https://github.com/Samir-Khadka" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+        <a href="mailto:samirshirjan890@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i> Email</a>
+      </div>
+      <p class="foot-copy">© 2026 Samir Khadka.</p>
     </div>
   </footer>
 
-  <!-- Floating bottom interactive buttons -->
-  <button onclick="toggleInfoModal(true)" class="info-btn" aria-label="About Samir Khadka">
-    <i class="fas fa-info"></i>
-  </button>
-  
-  <button id="bg-toggle" class="bg-toggle" onclick="toggleBgVideo()" aria-label="Pause background video" aria-pressed="false">⏸</button><button onclick="changeBackground()" class="change-bg-btn" aria-label="Change Background Video">
-    <i class="fas fa-random"></i> <span>Change BG</span>
-  </button>
-
-  <!-- Centered Popup Bio Modal -->
-  <div id="aboutModal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="About Samir Khadka">
-    <div class="modal-box">
-      <button onclick="toggleInfoModal(false)" class="modal-close-btn" aria-label="Close modal">
-        <i class="fas fa-times"></i>
-      </button>
-      <div class="modal-profile-header">
-        <img src="assets/profile.jpg" alt="Samir Khadka Profile Photo" class="modal-profile-img">
-        <div class="modal-profile-title">
-          <h2>Samir Khadka</h2>
-          <p>Developer &amp; Designer</p>
-        </div>
-      </div>
-      <div class="modal-bio">
-        <p>Samir Khadka is a full stack software developer, graphic designer, and competitive chess player from Urlabari, Nepal.</p>
-        <p>Recent BSc CSIT graduate (2022 — 2026) who has represented Nepal at the U-16 World Youth Chess Olympiad. Passionate about building premium visual web interfaces and solid DevOps/Cloud deployment automation.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Sidebar Drawer Overlay and Drawer -->
-  <div id="sidebarOverlay" class="sidebar-overlay"></div>
-  <div id="sidebarDrawer" class="sidebar-drawer" role="dialog" aria-modal="true" aria-label="Skills Archive">
-    <div class="sidebar-header">
-      <div class="sidebar-header-title">
-        <i class="fas fa-layer-group" style="font-size:1.3rem;"></i>
-        <div>
-          <h2>Skills Archive</h2>
-          <p style="margin: 0; font-size:0.65rem; opacity:0.7;">Filter &amp; Explore</p>
-        </div>
-      </div>
-      <button onclick="toggleSidebar(false)" class="sidebar-close-btn" aria-label="Close sidebar">
-        <i class="fas fa-times"></i>
-      </button>
-    </div>
-    <div class="sidebar-search-box">
-      <div class="sidebar-search-input-wrapper">
-        <i class="fas fa-search"></i>
-        <input type="text" id="sidebarSearch" placeholder="Search skills, category, level..." class="sidebar-search-input">
-      </div>
-    </div>
-    <div id="allSkillsList" class="sidebar-content">
-      <!-- Rendered dynamically via JavaScript -->
-    </div>
-    <div id="sidebarNoResults" class="sidebar-no-results">
-      <i class="fas fa-box-open"></i>
-      <h4>No skills found</h4>
-      <p style="font-size:0.8rem; opacity:0.7;">Try searching with different keywords.</p>
-    </div>
-  </div>
-
-  <script src="script.js?v=4"></script><script>window.toggleBgVideo=function(){var v=document.getElementById('bgVideo'),b=document.getElementById('bg-toggle');if(v.paused){v.play();b.textContent='⏸'}else{v.pause();b.textContent='▶'}};</script>
-<script src="a11y-dialogs.js"></script> 
+  <script src="script.js?v=5"></script>
 </body>
 </html>
